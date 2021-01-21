@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:padding="10dp">
+
+
+    <TextView
+        android:id="@+id/an_index"
+        android:layout_width="125dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="8dp"
+        android:gravity="left|center_vertical"
+        android:text="2020"
+        android:textColor="@color/black"
+        android:textSize="20dp" />
+
+    <TextView
+        android:id="@+id/luna_index"
+        android:layout_width="125dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="iunie"
+        android:textSize="20dp"
+        android:layout_toEndOf="@+id/an_index"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="@+id/an_index"
+        tools:layout_editor_absoluteY="60dp" />
+
+
+    <TextView
+        android:id="@+id/index_valoare"
+        android:layout_width="125dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="152"
+        android:textSize="20dp"
+        android:layout_toEndOf="@+id/luna_index"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="@+id/luna_index"
+        tools:layout_editor_absoluteY="60dp" />
+
+</RelativeLayout>

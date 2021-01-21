@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/logo"
+    tools:context=".MainActivity">
+
+
+    <TextView
+        android:id="@+id/stergerecont_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="28dp"
+        android:foregroundGravity="center"
+        android:gravity="center"
+        android:text="Sunteti sigur(a) ca doriti sa stergeti contul?Aceasta actiune este ireversibila.  "
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="185dp" />
+
+
+
+    <Button
+        android:id="@+id/stergerecont_button"
+        android:layout_width="200dp"
+        android:layout_height="60dp"
+        android:layout_below="@+id/stergerecont_label"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="@color/blue"
+        android:gravity="center"
+        android:text="Sterge cont"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.54"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/stergerecont_label" />
+
+
+
+    <Button
+        android:id="@+id/inapoi_buton"
+        android:layout_width="200dp"
+        android:layout_height="60dp"
+        android:layout_below="@+id/stergerecont_button"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="@color/blue"
+        android:gravity="center"
+        android:text=" <- Inapoi"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.54"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/stergerecont_button" />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

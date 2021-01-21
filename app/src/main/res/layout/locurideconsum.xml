@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/logo"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/administrare_locuri_label"
+        android:layout_width="170dp"
+        android:layout_height="170dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="192dp"
+        android:src="@drawable/cerc"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/administrare_locuri_label_edit"
+        android:layout_width="170dp"
+        android:layout_height="170dp"
+        android:layout_centerHorizontal="true"
+        android:foregroundGravity="center"
+        android:gravity="center"
+        android:textSize="17sp"
+        android:text="Administrare Locuri de Consum"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="@+id/administrare_locuri_label"
+        app:layout_constraintEnd_toEndOf="@+id/administrare_locuri_label"
+        app:layout_constraintHorizontal_bias="0.369"
+        app:layout_constraintStart_toStartOf="@+id/administrare_locuri_label"
+        app:layout_constraintTop_toTopOf="@+id/administrare_locuri_label" />
+
+    <ImageView
+        android:id="@+id/adaugareloc"
+        android:layout_width="170dp"
+        android:layout_height="170dp"
+        android:layout_marginEnd="40dp"
+        android:src="@drawable/cerc"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:layout_editor_absoluteY="192dp" />
+
+
+    <TextView
+        android:id="@+id/istoricindex"
+        android:layout_width="170dp"
+        android:layout_height="170dp"
+        android:layout_centerHorizontal="true"
+        android:foregroundGravity="center"
+        android:gravity="center"
+        android:textSize="17sp"
+        android:text="Adaugare loc de consum"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="@+id/adaugareloc"
+        app:layout_constraintEnd_toEndOf="@+id/adaugareloc"
+        app:layout_constraintStart_toStartOf="@+id/adaugareloc"
+        app:layout_constraintTop_toTopOf="@+id/adaugareloc"
+
+        />
+
+    <Button
+        android:id="@+id/exit"
+        android:layout_width="200dp"
+        android:layout_height="60dp"
+        android:layout_below="@+id/forgotpass"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+        android:backgroundTint="@color/blue"
+        android:gravity="center"
+        android:text=" <-  Contul meu"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.54"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/istoricindex" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

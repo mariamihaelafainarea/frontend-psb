@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/logo"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/transmitereindex_circle"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="192dp"
+        android:src="@drawable/cerc"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/transmitereindex"
+        android:layout_width="170dp"
+        android:layout_height="170dp"
+        android:layout_centerHorizontal="true"
+        android:foregroundGravity="center"
+        android:gravity="center"
+        android:textSize="17sp"
+        android:text="Date de contact"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="@+id/transmitereindex_circle"
+        app:layout_constraintEnd_toEndOf="@+id/transmitereindex_circle"
+        app:layout_constraintHorizontal_bias="0.369"
+        app:layout_constraintStart_toStartOf="@+id/transmitereindex_circle"
+        app:layout_constraintTop_toTopOf="@+id/transmitereindex_circle" />
+
+    <ImageView
+        android:id="@+id/modificaparola_circle"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="32dp"
+        android:src="@drawable/cerc"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/transmitereindex_circle" />
+
+
+    <TextView
+        android:id="@+id/modificaparola"
+        android:layout_width="170dp"
+        android:layout_height="170dp"
+        android:layout_centerHorizontal="true"
+        android:foregroundGravity="center"
+        android:gravity="center"
+        android:textSize="17sp"
+        android:text="Modifica Parola"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="@+id/modificaparola_circle"
+        app:layout_constraintEnd_toEndOf="@+id/modificaparola_circle"
+        app:layout_constraintHorizontal_bias="0.369"
+        app:layout_constraintStart_toStartOf="@+id/modificaparola_circle"
+        app:layout_constraintTop_toTopOf="@+id/modificaparola_circle" />
+
+
+    <ImageView
+        android:id="@+id/locurideconsum_circle"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginEnd="40dp"
+        android:src="@drawable/cerc"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:layout_editor_absoluteY="192dp" />
+
+    <TextView
+        android:id="@+id/locurideconsum"
+        android:layout_width="170dp"
+        android:layout_height="170dp"
+        android:layout_centerHorizontal="true"
+        android:foregroundGravity="center"
+        android:gravity="center"
+        android:textSize="17sp"
+        android:text="Locuri de consum"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="@+id/locurideconsum_circle"
+        app:layout_constraintEnd_toEndOf="@+id/locurideconsum_circle"
+        app:layout_constraintHorizontal_bias="0.369"
+        app:layout_constraintStart_toStartOf="@+id/locurideconsum_circle"
+        app:layout_constraintTop_toTopOf="@+id/locurideconsum_circle" />
+
+
+
+    <ImageView
+        android:id="@+id/stergerecont_circle"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="40dp"
+        android:src="@drawable/cerc"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/locurideconsum_circle" />
+
+
+    <TextView
+        android:id="@+id/stergerecont"
+        android:layout_width="170dp"
+        android:layout_height="170dp"
+        android:layout_centerHorizontal="true"
+        android:foregroundGravity="center"
+        android:gravity="center"
+        android:textSize="17sp"
+        android:text="Stergere Cont"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="@+id/stergerecont_circle"
+        app:layout_constraintEnd_toEndOf="@+id/stergerecont_circle"
+        app:layout_constraintHorizontal_bias="0.369"
+        app:layout_constraintStart_toStartOf="@+id/stergerecont_circle"
+        app:layout_constraintTop_toTopOf="@+id/stergerecont_circle" />
+
+
+    <Button
+        android:id="@+id/exit"
+        android:layout_width="200dp"
+        android:layout_height="60dp"
+        android:layout_below="@+id/forgotpass"
+        android:layout_centerHorizontal="true"
+        android:backgroundTint="@color/blue"
+        android:gravity="center"
+        android:text="Pagina principala"
+        android:textColor="@color/white"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.592"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/modificaparola_circle" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
