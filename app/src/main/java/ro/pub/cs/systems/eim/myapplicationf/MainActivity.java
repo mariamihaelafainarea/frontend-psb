@@ -15,10 +15,31 @@ import android.widget.Button;
 
 import com.google.android.material.navigation.NavigationView;
 
+import ro.pub.cs.systems.eim.myapplicationf.fragments.ContactFragment;
+import ro.pub.cs.systems.eim.myapplicationf.fragments.ContulMeuFragment;
+import ro.pub.cs.systems.eim.myapplicationf.fragments.FacturiFragment;
+import ro.pub.cs.systems.eim.myapplicationf.fragments.IndexFragment;
+import ro.pub.cs.systems.eim.myapplicationf.fragments.MainPageFragment;
+import ro.pub.cs.systems.eim.myapplicationf.fragments.PuncteFragment;
+
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     public FragmentManager fragmentManager;
     private DrawerLayout drawer;
     private NavigationView navigationView;
+    private IndexFragment indexFragment;
+    private FacturiFragment facturiFragment;
+    private ContulMeuFragment contulMeuFragment;
+    private PuncteFragment puncteFragment;
+    private ContactFragment contactFragment;
+
+    private Button indexButton;
+    private Button facturiButton;
+    private Button contulMeuButton;
+    private Button puncteButton;
+    private Button contactButton;
+    private Button logoutButton;
+
+    private MainPageFragment mainPageFragment;
 
 
 
@@ -37,6 +58,15 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this,drawer,toolbar,R.string.Open,R.string.Close);
         drawer.addDrawerListener(toggle);
 
+        getSupportFragmentManager().beginTransaction().add(R.id.fragment_container, mainPageFragment,MainPageFragment.class.getSimpleName()).commit();
+
+
+
+        indexFragment = new IndexFragment();
+        facturiFragment = new FacturiFragment();
+        contulMeuFragment = new ContulMeuFragment();
+        puncteFragment = new PuncteFragment();
+        contactFragment = new ContactFragment();
 
     }
 

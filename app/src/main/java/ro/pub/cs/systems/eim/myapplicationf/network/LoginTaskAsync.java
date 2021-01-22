@@ -25,6 +25,9 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.List;
 
+import ro.pub.cs.systems.eim.myapplicationf.LoginActivity;
+import ro.pub.cs.systems.eim.myapplicationf.MainActivity;
+
 public class LoginTaskAsync extends AsyncTask<String, Void, JSONObject> {
     Activity activity;
     public LoginTaskAsync(Activity activity) {
@@ -40,7 +43,7 @@ public class LoginTaskAsync extends AsyncTask<String, Void, JSONObject> {
 
         try {
             HttpClient httpClient = new DefaultHttpClient();
-            HttpPost httpPost = new HttpPost("http://10.0.2.2:5001/users/getUser");
+            HttpPost httpPost = new HttpPost("http://10.0.2.2:5001/authenticate");
 
             List<NameValuePair> parametrii = new ArrayList<NameValuePair>();
             parametrii.add(new BasicNameValuePair("username", username));
@@ -73,6 +76,34 @@ public class LoginTaskAsync extends AsyncTask<String, Void, JSONObject> {
     @Override
     protected void onPostExecute(JSONObject jsonObject) {
         super.onPostExecute(jsonObject);
+        ((LoginActivity)activity).getWindow().clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
+        if(jsonObject != null) {
+            try {
+                Intent i = new Intent(activity, MainActivity.class);
+                i.putExtra("username", jsonObject.getString("username"));
+                i.putExtra("email", jsonObject.getString("email"));
+                activity.startActivity(i);
+            }catch (Exception e){
+                e.printStackTrace();
+            }
+        }else {
+            AlertDialog.Builder builder = new AlertDialog.Builder(activity);
+
+            builder.setTitle("Contul nu exista !");
+
+            builder.setMessage("Datele de conectare nu sunt cele asteptate. Te rog sa reincerci!")
+                    .setCancelable(true)
+                    .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int id) {
+                            dialog.cancel();
+                        }
+                    });
+
+            AlertDialog alertDialog = builder.create();
+            alertDialog.show();
+
+        }
+
 
 
     }
