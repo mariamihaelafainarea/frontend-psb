@@ -72,19 +72,20 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/username_edit" />
 
-    <Button
-        android:id="@+id/donthaveaccount"
-        android:layout_width="150dp"
-        android:layout_height="60dp"
-        android:layout_below="@+id/button_login"
-        android:layout_centerHorizontal="true"
-        android:backgroundTint="@color/blue"
-        android:gravity="center"
-        android:text=" <- Pagina Login"
-        android:textColor="@color/white"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button_login" />
+<!--    <Button-->
+<!--        android:id="@+id/donthaveaccount"-->
+<!--        android:layout_width="150dp"-->
+<!--        android:layout_height="60dp"-->
+<!--        android:layout_below="@+id/button_login"-->
+<!--        android:layout_centerHorizontal="true"-->
+<!--        android:backgroundTint="@color/blue"-->
+<!--        android:gravity="center"-->
+<!--        android:text=" <- Pagina Login"-->
+<!--        android:textColor="@color/white"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/button_login" />-->
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
