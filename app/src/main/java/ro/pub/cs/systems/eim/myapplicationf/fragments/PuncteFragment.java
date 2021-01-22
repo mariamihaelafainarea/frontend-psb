@@ -1,4 +1,8 @@
 package ro.pub.cs.systems.eim.myapplicationf.fragments;
 
-public class PuncteFragment {
+import androidx.fragment.app.Fragment;
+
+public class PuncteFragment  extends Fragment {
+
+
 }

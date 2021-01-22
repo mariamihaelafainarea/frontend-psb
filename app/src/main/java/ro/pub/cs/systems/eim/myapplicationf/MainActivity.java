@@ -25,12 +25,12 @@ import ro.pub.cs.systems.eim.myapplicationf.fragments.PuncteFragment;
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     public FragmentManager fragmentManager;
     private DrawerLayout drawer;
-    private NavigationView navigationView;
-    private IndexFragment indexFragment;
-    private FacturiFragment facturiFragment;
-    private ContulMeuFragment contulMeuFragment;
-    private PuncteFragment puncteFragment;
-    private ContactFragment contactFragment;
+    public NavigationView navigationView;
+    public IndexFragment indexFragment;
+    public FacturiFragment facturiFragment;
+    public ContulMeuFragment contulMeuFragment;
+    public PuncteFragment puncteFragment;
+    public ContactFragment contactFragment;
 
     private Button indexButton;
     private Button facturiButton;
@@ -58,10 +58,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this,drawer,toolbar,R.string.Open,R.string.Close);
         drawer.addDrawerListener(toggle);
 
+        mainPageFragment = new MainPageFragment();
+
         getSupportFragmentManager().beginTransaction().add(R.id.fragment_container, mainPageFragment,MainPageFragment.class.getSimpleName()).commit();
-
-
-
         indexFragment = new IndexFragment();
         facturiFragment = new FacturiFragment();
         contulMeuFragment = new ContulMeuFragment();
