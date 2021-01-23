@@ -22,7 +22,6 @@ public class IndexFragment extends Fragment {
     ImageView buttonIstoricIndex;
     Button paginaPrincipala;
 
-
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
@@ -30,12 +29,21 @@ public class IndexFragment extends Fragment {
         final TransmitereIndexFragment transmitereIndexFragment = new TransmitereIndexFragment();
 
         buttonTransmitereIndex = view.findViewById(R.id.cerc_transmitereindex);
+        buttonIstoricIndex = view.findViewById(R.id.cerc_istoricindex);
         paginaPrincipala = view.findViewById(R.id.exit_index);
 
         buttonTransmitereIndex.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                getActivity().getSupportFragmentManager().beginTransaction().add(R.id.fragment_container,transmitereIndexFragment ,TransmitereIndexFragment.class.getSimpleName()).commit();
+                getActivity().getSupportFragmentManager().beginTransaction().add(R.id.fragment_container, transmitereIndexFragment, TransmitereIndexFragment.class.getSimpleName()).commit();
+
+            }
+        });
+
+        buttonIstoricIndex.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                getActivity().getSupportFragmentManager().beginTransaction().add(R.id.fragment_container, transmitereIndexFragment, TransmitereIndexFragment.class.getSimpleName()).commit();
 
             }
         });
@@ -47,14 +55,6 @@ public class IndexFragment extends Fragment {
                 fm.popBackStack ("index", FragmentManager.POP_BACK_STACK_INCLUSIVE);
             }
         });
-
-
-
-
-
-
-
-
     }
 
     @Nullable
