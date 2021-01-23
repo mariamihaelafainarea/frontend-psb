@@ -9,9 +9,9 @@
 
     <ImageView
         android:id="@+id/cerc_transmitereindex"
-        android:layout_width="170dp"
-        android:layout_height="170dp"
-        android:layout_marginStart="20dp"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginStart="40dp"
         android:layout_marginTop="192dp"
         android:src="@drawable/cerc"
         app:layout_constraintStart_toStartOf="parent"
@@ -20,46 +20,44 @@
 
     <TextView
         android:id="@+id/transmitereindex"
-        android:layout_width="170dp"
-        android:layout_height="170dp"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
         android:layout_centerHorizontal="true"
         android:foregroundGravity="center"
         android:gravity="center"
-        android:textSize="17sp"
         android:text="Transmitere Index"
         android:textColor="@color/white"
+        android:textSize="17sp"
         app:layout_constraintBottom_toBottomOf="@+id/cerc_transmitereindex"
         app:layout_constraintEnd_toEndOf="@+id/cerc_transmitereindex"
-        app:layout_constraintHorizontal_bias="0.369"
         app:layout_constraintStart_toStartOf="@+id/cerc_transmitereindex"
         app:layout_constraintTop_toTopOf="@+id/cerc_transmitereindex" />
 
     <ImageView
         android:id="@+id/cerc_istoricindex"
-        android:layout_width="170dp"
-        android:layout_height="170dp"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="192dp"
         android:layout_marginEnd="40dp"
         android:src="@drawable/cerc"
         app:layout_constraintEnd_toEndOf="parent"
-        tools:layout_editor_absoluteY="192dp" />
-
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/istoricindex"
-        android:layout_width="170dp"
-        android:layout_height="170dp"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
         android:layout_centerHorizontal="true"
         android:foregroundGravity="center"
         android:gravity="center"
-        android:textSize="17sp"
         android:text="Istoric Index"
         android:textColor="@color/white"
+        android:textSize="17sp"
         app:layout_constraintBottom_toBottomOf="@+id/cerc_istoricindex"
         app:layout_constraintEnd_toEndOf="@+id/cerc_istoricindex"
         app:layout_constraintStart_toStartOf="@+id/cerc_istoricindex"
-        app:layout_constraintTop_toTopOf="@+id/cerc_istoricindex"
 
-        />
+        app:layout_constraintTop_toTopOf="@+id/cerc_istoricindex" />
 
     <Button
         android:id="@+id/exit"
