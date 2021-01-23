@@ -49,12 +49,6 @@ public class IndexFragment extends Fragment {
         });
 
 
-
-
-
-
-
-
     }
 
     @Nullable
