@@ -11,7 +11,7 @@ import androidx.fragment.app.Fragment;
 
 import ro.pub.cs.systems.eim.myapplicationf.R;
 
-public class FacturiFragment  extends Fragment {
+public class FacturiFragment extends Fragment {
 
 
 }
