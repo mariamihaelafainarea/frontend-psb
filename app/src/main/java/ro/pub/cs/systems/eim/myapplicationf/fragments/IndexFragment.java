@@ -26,12 +26,15 @@ public class IndexFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+        final TransmitereIndexFragment transmitereIndexFragment = new TransmitereIndexFragment();
+
         buttonTransmitereIndex = view.findViewById(R.id.cerc_transmitereindex);
-        paginaPrincipala = view.findViewById(R.id.exit);
+        paginaPrincipala = view.findViewById(R.id.exit_trasnmitereIndex);
 
         buttonTransmitereIndex.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                getActivity().getSupportFragmentManager().beginTransaction().add(R.id.fragment_container,transmitereIndexFragment ,TransmitereIndexFragment.class.getSimpleName()).commit();
 
             }
         });

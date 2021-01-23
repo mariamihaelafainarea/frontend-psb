@@ -34,15 +34,16 @@
         app:layout_constraintStart_toStartOf="@+id/cerc_transmitereindex"
         app:layout_constraintTop_toTopOf="@+id/cerc_transmitereindex" />
 
+
     <ImageView
         android:id="@+id/cerc_istoricindex"
         android:layout_width="170dp"
         android:layout_height="170dp"
-        android:layout_marginEnd="40dp"
+        android:layout_marginTop="192dp"
+        android:layout_marginEnd="28dp"
         android:src="@drawable/cerc"
         app:layout_constraintEnd_toEndOf="parent"
-        tools:layout_editor_absoluteY="192dp" />
-
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/istoricindex"
@@ -61,8 +62,9 @@
 
         />
 
+
     <Button
-        android:id="@+id/exit"
+        android:id="@+id/exit_trasnmitereIndex"
         android:layout_width="200dp"
         android:layout_height="60dp"
         android:layout_below="@+id/forgotpass"
@@ -75,7 +77,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.54"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cerc_transmitereindex" />
+        app:layout_constraintTop_toBottomOf="@+id/istoricindex" />
+
+
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
