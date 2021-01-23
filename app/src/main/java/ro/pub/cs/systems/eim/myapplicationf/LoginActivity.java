@@ -35,35 +35,35 @@ public class LoginActivity extends Activity {
         passwordEditText = (EditText) findViewById(R.id.password_edit);
 
 
-//        loginButton.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                username = usernameEditText.getText().toString().trim();
-//                password = passwordEditText.getText().toString().trim();
-//                if(username == null || username.equals("")){
-//                    Bundle bundle = new Bundle();
-//                    bundle.putString("Eroare","Te rog introdu un username");
-//                    showDialog(1,bundle);
-//                }else if(password == null || password.equals("")){
-//                    Bundle bundle = new Bundle();
-//                    bundle.putString("Eroare","Te rog introdu parola");
-//                    showDialog(1,bundle);
-//                }else {
-//                    getWindow().setFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE,
-//                            WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
-//                    new LoginTaskAsync(LoginActivity.this).execute(username, password);
-//                }
-//            }
-//        });
-//
-//
-//        inregistrareButton.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Intent i = new Intent(LoginActivity.this, RegisterActivity.class);
-//                startActivity(i);
-//            }
-//        });
+        loginButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                username = usernameEditText.getText().toString().trim();
+                password = passwordEditText.getText().toString().trim();
+                if(username == null || username.equals("")){
+                    Bundle bundle = new Bundle();
+                    bundle.putString("Eroare","Te rog introdu un username");
+                    showDialog(1,bundle);
+                }else if(password == null || password.equals("")){
+                    Bundle bundle = new Bundle();
+                    bundle.putString("Eroare","Te rog introdu parola");
+                    showDialog(1,bundle);
+                }else {
+                    getWindow().setFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE,
+                            WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
+                    new LoginTaskAsync(LoginActivity.this).execute(username, password);
+                }
+            }
+        });
+
+
+        inregistrareButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(LoginActivity.this, RegisterActivity.class);
+                startActivity(i);
+            }
+        });
 
     }
 }

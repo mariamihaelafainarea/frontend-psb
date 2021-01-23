@@ -61,6 +61,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         mainPageFragment = new MainPageFragment();
 
         getSupportFragmentManager().beginTransaction().add(R.id.fragment_container, mainPageFragment,MainPageFragment.class.getSimpleName()).commit();
+
+
         indexFragment = new IndexFragment();
         facturiFragment = new FacturiFragment();
         contulMeuFragment = new ContulMeuFragment();
