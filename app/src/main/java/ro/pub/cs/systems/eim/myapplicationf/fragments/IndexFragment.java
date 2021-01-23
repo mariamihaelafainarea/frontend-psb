@@ -29,7 +29,7 @@ public class IndexFragment extends Fragment {
         final TransmitereIndexFragment transmitereIndexFragment = new TransmitereIndexFragment();
 
         buttonTransmitereIndex = view.findViewById(R.id.cerc_transmitereindex);
-        paginaPrincipala = view.findViewById(R.id.exit_trasnmitereIndex);
+        paginaPrincipala = view.findViewById(R.id.exit);
 
         buttonTransmitereIndex.setOnClickListener(new View.OnClickListener() {
             @Override
