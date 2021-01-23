@@ -27,6 +27,7 @@
         android:layout_width="350dp"
         android:layout_height="70dp"
         android:layout_marginTop="15dp"
+        android:textColor="@color/black"
         android:outlineAmbientShadowColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -54,7 +55,9 @@
         android:layout_height="50dp"
         android:layout_marginStart="28dp"
         android:layout_marginTop="8dp"
-        android:text="78 KW/h"
+        android:textColorHint="@color/black"
+        android:hint="78 KW/h"
+        android:textColor="@color/black"
         android:textSize="20dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/index_label" />
@@ -82,8 +85,10 @@
         android:layout_height="50dp"
         android:layout_marginStart="28dp"
         android:layout_marginTop="8dp"
-        android:text="2020"
+        android:hint="2020"
+        android:textColorHint="@color/black"
         android:textSize="20dp"
+        android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/an_label" />
 
@@ -107,17 +112,18 @@
 
     <Spinner
         android:id="@+id/luna_spinner"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
         android:layout_marginStart="28dp"
         android:layout_marginTop="12dp"
+        android:outlineSpotShadowColor="@color/black"
         android:outlineAmbientShadowColor="@color/black"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/luna_label" />
 
 
     <Button
-        android:id="@+id/exit"
+        android:id="@+id/transmitereIndexAcum"
         android:layout_width="200dp"
         android:layout_height="60dp"
         android:layout_below="@+id/forgotpass"
