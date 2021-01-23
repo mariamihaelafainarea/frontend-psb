@@ -19,6 +19,7 @@ import ro.pub.cs.systems.eim.myapplicationf.R;
 public class IndexFragment extends Fragment {
 
     ImageView buttonTransmitereIndex;
+    ImageView buttonIstoricIndex;
     Button paginaPrincipala;
 
 
@@ -29,7 +30,7 @@ public class IndexFragment extends Fragment {
         final TransmitereIndexFragment transmitereIndexFragment = new TransmitereIndexFragment();
 
         buttonTransmitereIndex = view.findViewById(R.id.cerc_transmitereindex);
-        paginaPrincipala = view.findViewById(R.id.exit);
+        paginaPrincipala = view.findViewById(R.id.exit_index);
 
         buttonTransmitereIndex.setOnClickListener(new View.OnClickListener() {
             @Override

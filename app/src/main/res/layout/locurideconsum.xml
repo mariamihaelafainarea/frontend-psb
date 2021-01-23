@@ -45,7 +45,7 @@
 
 
     <TextView
-        android:id="@+id/istoricindex"
+        android:id="@+id/istoricIndex"
         android:layout_width="170dp"
         android:layout_height="170dp"
         android:layout_centerHorizontal="true"

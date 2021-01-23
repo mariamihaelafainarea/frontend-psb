@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -15,13 +16,49 @@ import ro.pub.cs.systems.eim.myapplicationf.R;
 
 public class ContulMeuFragment  extends Fragment {
 
+    ImageView buttonDateDeContact;
+    ImageView buttonModificaParola;
+    ImageView buttonLocuriDeConsum;
+    ImageView buttonStergereCont;
     Button paginaPrincipala;
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        paginaPrincipala = view.findViewById(R.id.exit);
+        buttonDateDeContact = view.findViewById(R.id.cerc_datedecontact);
+        buttonModificaParola = view.findViewById(R.id.cerc_locurideconsum);
+        buttonLocuriDeConsum = view.findViewById(R.id.cerc_modificaparola);
+        buttonStergereCont = view.findViewById(R.id.cerc_stergerecont);
+        paginaPrincipala = view.findViewById(R.id.exit_contulmeu);
+
+        buttonDateDeContact.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
+
+        buttonModificaParola.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
+
+        buttonLocuriDeConsum.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
+
+        buttonStergereCont.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
 
         paginaPrincipala.setOnClickListener(new View.OnClickListener() {
             @Override

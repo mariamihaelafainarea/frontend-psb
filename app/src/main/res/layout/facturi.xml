@@ -8,7 +8,7 @@
     tools:context=".MainActivity">
 
     <ImageView
-        android:id="@+id/cerc_transmitereindex"
+        android:id="@+id/cerc_administrarefacturineplatite"
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:layout_marginStart="40dp"
@@ -19,23 +19,23 @@
 
 
     <TextView
-        android:id="@+id/transmitereIndex"
+        android:id="@+id/administrareFacturiNeplatite"
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:layout_centerHorizontal="true"
         android:foregroundGravity="center"
         android:gravity="center"
-        android:text="Transmitere Index"
+        android:text="Administrare Facturi Neplatite"
         android:textAlignment="center"
         android:textColor="@color/white"
         android:textSize="17sp"
-        app:layout_constraintBottom_toBottomOf="@+id/cerc_transmitereindex"
-        app:layout_constraintEnd_toEndOf="@+id/cerc_transmitereindex"
-        app:layout_constraintStart_toStartOf="@+id/cerc_transmitereindex"
-        app:layout_constraintTop_toTopOf="@+id/cerc_transmitereindex" />
+        app:layout_constraintBottom_toBottomOf="@+id/cerc_administrarefacturineplatite"
+        app:layout_constraintEnd_toEndOf="@+id/cerc_administrarefacturineplatite"
+        app:layout_constraintStart_toStartOf="@+id/cerc_administrarefacturineplatite"
+        app:layout_constraintTop_toTopOf="@+id/cerc_administrarefacturineplatite" />
 
     <ImageView
-        android:id="@+id/cerc_istoricindex"
+        android:id="@+id/cerc_listareplati"
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:layout_marginTop="192dp"
@@ -51,18 +51,18 @@
         android:layout_centerHorizontal="true"
         android:foregroundGravity="center"
         android:gravity="center"
-        android:text="Istoric Index"
+        android:text="Listare Plati"
         android:textAlignment="center"
         android:textColor="@color/white"
         android:textSize="17sp"
-        app:layout_constraintBottom_toBottomOf="@+id/cerc_istoricindex"
-        app:layout_constraintEnd_toEndOf="@+id/cerc_istoricindex"
+        app:layout_constraintBottom_toBottomOf="@+id/cerc_listareplati"
+        app:layout_constraintEnd_toEndOf="@+id/cerc_listareplati"
 
-        app:layout_constraintStart_toStartOf="@+id/cerc_istoricindex"
-        app:layout_constraintTop_toTopOf="@+id/cerc_istoricindex" />
+        app:layout_constraintStart_toStartOf="@+id/cerc_listareplati"
+        app:layout_constraintTop_toTopOf="@+id/cerc_listareplati" />
 
     <TextView
-        android:id="@+id/header_index"
+        android:id="@+id/header_facturi"
         android:layout_width="150dp"
         android:layout_height="25dp"
         android:layout_centerHorizontal="true"
@@ -70,9 +70,9 @@
         android:layout_marginTop="78dp"
         android:layout_marginEnd="40dp"
         android:foregroundGravity="center"
-        android:gravity="center"
 
-        android:text="Istoric Index"
+        android:gravity="center"
+        android:text="Facturi si Plati"
         android:textAlignment="center"
         android:textColor="@color/white"
         android:textSize="17sp"
@@ -81,7 +81,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/exit_index"
+        android:id="@+id/exit_facturi"
         android:layout_width="200dp"
         android:layout_height="60dp"
         android:layout_below="@+id/forgotpass"
@@ -95,7 +95,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.54"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cerc_transmitereindex" />
+        app:layout_constraintTop_toBottomOf="@+id/cerc_administrarefacturineplatite" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
