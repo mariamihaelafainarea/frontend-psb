@@ -1,5 +1,6 @@
 package ro.pub.cs.systems.eim.myapplicationf.fragments;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,6 +13,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 
+import ro.pub.cs.systems.eim.myapplicationf.LoginActivity;
 import ro.pub.cs.systems.eim.myapplicationf.R;
 
 public class IndexFragment extends Fragment {
@@ -25,6 +27,7 @@ public class IndexFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         final TransmitereIndexFragment transmitereIndexFragment = new TransmitereIndexFragment();
+        final IstoricIndexFragment istoricIndexFragment = new IstoricIndexFragment();
 
         buttonTransmitereIndex = view.findViewById(R.id.cerc_transmitereindex);
         buttonIstoricIndex = view.findViewById(R.id.cerc_istoricindex);
@@ -41,7 +44,7 @@ public class IndexFragment extends Fragment {
         buttonIstoricIndex.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                getActivity().getSupportFragmentManager().beginTransaction().add(R.id.fragment_container, transmitereIndexFragment, TransmitereIndexFragment.class.getSimpleName()).addToBackStack("istoric_index").commit();
+                getActivity().getSupportFragmentManager().beginTransaction().add(R.id.fragment_container, istoricIndexFragment, TransmitereIndexFragment.class.getSimpleName()).addToBackStack("istoric_index").commit();
 
             }
         });
