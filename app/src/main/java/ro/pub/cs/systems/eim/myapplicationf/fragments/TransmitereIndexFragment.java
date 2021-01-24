@@ -8,12 +8,12 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.Spinner;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 
 import ro.pub.cs.systems.eim.myapplicationf.MainActivity;
 import ro.pub.cs.systems.eim.myapplicationf.R;
@@ -22,19 +22,25 @@ import ro.pub.cs.systems.eim.myapplicationf.network.TrasnmitereIndexAsyncTask;
 public class TransmitereIndexFragment extends Fragment {
 
     Button transmitereIndexButton;
+    Button inapoiButton;
+
     Spinner addressSpinner;
+    EditText indexEditText;
     EditText anEditText;
     Spinner lunaSpinner;
-    EditText indexEditText;
-
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        transmitereIndexButton = (Button) view.findViewById(R.id.transmitereIndexAcum);
-        addressSpinner = view.findViewById(R.id.adress_spinner);
-        anEditText = view.findViewById(R.id.an_edittext);
-        lunaSpinner = view.findViewById(R.id.luna_spinner);
+
+        transmitereIndexButton = view.findViewById(R.id.button_transmitereindex);
+        inapoiButton = view.findViewById(R.id.exit_transmitereindex);
+
+        addressSpinner = view.findViewById(R.id.spinner_locatie_transmitereindex);
+        indexEditText = view.findViewById(R.id.edit_index_transmitereindex);
+        anEditText = view.findViewById(R.id.edit_an_transmitereindex);
+        lunaSpinner = view.findViewById(R.id.spinner_luna_transmitereindex);
+
         ArrayAdapter<CharSequence> staticAdapter = ArrayAdapter
                 .createFromResource(getActivity(), R.array.lunidinan,
                         android.R.layout.simple_spinner_item);
@@ -47,7 +53,6 @@ public class TransmitereIndexFragment extends Fragment {
         lunaSpinner.setSelection(spinnerPosition);
         lunaSpinner.setBackgroundColor(Color.parseColor("#a9a9a9"));
 
-
         transmitereIndexButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -59,6 +64,13 @@ public class TransmitereIndexFragment extends Fragment {
             }
         });
 
+        inapoiButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                FragmentManager fm = (FragmentManager) getActivity().getSupportFragmentManager();
+                fm.popBackStack ("transmitere_index", FragmentManager.POP_BACK_STACK_INCLUSIVE);
+            }
+        });
     }
 
     @Nullable

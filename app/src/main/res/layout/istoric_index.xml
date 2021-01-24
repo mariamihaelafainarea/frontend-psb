@@ -23,9 +23,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-
     <Spinner
-        android:id="@+id/adress_spinner_istoric"
+        android:id="@+id/adress_spinner"
         android:layout_width="350dp"
         android:layout_height="70dp"
         android:layout_marginTop="15dp"
@@ -41,7 +40,6 @@
         android:layout_height="60dp"
         android:layout_below="@+id/forgotpass"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="8dp"
         android:backgroundTint="@color/blue"
         android:gravity="center"
         android:text="Afiseaza istoric"
@@ -49,23 +47,19 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.54"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/adress_spinner_istoric" />
+        app:layout_constraintTop_toBottomOf="@+id/adress_spinner" />
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="424dp"
         android:layout_height="368dp"
         android:layout_below="@+id/afiseaza_index"
-
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/afiseaza_index">
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/books_recyclerview"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -73,4 +67,3 @@
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
-

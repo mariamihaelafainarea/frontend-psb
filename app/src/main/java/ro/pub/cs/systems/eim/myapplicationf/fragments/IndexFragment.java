@@ -29,7 +29,6 @@ public class IndexFragment extends Fragment {
         final TransmitereIndexFragment transmitereIndexFragment = new TransmitereIndexFragment();
         final IstoricIndexFragment istoricIndexFragment = new IstoricIndexFragment();
 
-
         buttonTransmitereIndex = view.findViewById(R.id.cerc_transmitereindex);
         buttonIstoricIndex = view.findViewById(R.id.cerc_istoricindex);
         paginaPrincipala = view.findViewById(R.id.exit_index);
@@ -37,7 +36,7 @@ public class IndexFragment extends Fragment {
         buttonTransmitereIndex.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                getActivity().getSupportFragmentManager().beginTransaction().add(R.id.fragment_container, transmitereIndexFragment, TransmitereIndexFragment.class.getSimpleName()).commit();
+                getActivity().getSupportFragmentManager().beginTransaction().add(R.id.fragment_container, transmitereIndexFragment, TransmitereIndexFragment.class.getSimpleName()).addToBackStack("transmitere_index").commit();
 
             }
         });
@@ -45,7 +44,7 @@ public class IndexFragment extends Fragment {
         buttonIstoricIndex.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                getActivity().getSupportFragmentManager().beginTransaction().add(R.id.fragment_container, istoricIndexFragment, TransmitereIndexFragment.class.getSimpleName()).commit();
+                getActivity().getSupportFragmentManager().beginTransaction().add(R.id.fragment_container, istoricIndexFragment, TransmitereIndexFragment.class.getSimpleName()).addToBackStack("istoric_index").commit();
 
             }
         });
