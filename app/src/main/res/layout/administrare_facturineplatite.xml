@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/white"
+    android:layout_width="match_parent"
+    android:fillViewport="true"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        xmlns:tools="http://schemas.android.com/tools"
+        android:orientation="vertical" android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/logo"
+        >
+
+
+        <TextView
+            android:id="@+id/locuriconsum_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="164dp"
+            android:text="Locuri de consum"
+            android:textSize="25dp"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+
+        <Spinner
+            android:id="@+id/locatii_facutirneplatite"
+            android:layout_width="350dp"
+            android:layout_height="70dp"
+            android:layout_marginTop="15dp"
+            android:outlineAmbientShadowColor="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_below="@+id/locuriconsum_label"
+            app:layout_constraintTop_toBottomOf="@+id/locuriconsum_label" />
+
+        <TextView
+            android:id="@+id/luna_facturineplatite"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="Luna"
+            android:textColor="@color/black"
+            android:textSize="25dp"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_below="@+id/locatii_facutirneplatite"
+            app:layout_constraintTop_toBottomOf="@+id/locatii_facutirneplatite" />
+
+
+        <Spinner
+            android:id="@+id/spinnerluna_facutirneplatite"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginStart="16dp"
+            android:outlineAmbientShadowColor="@color/black"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_below="@+id/luna_facturineplatite"
+            app:layout_constraintTop_toBottomOf="@+id/luna_facturineplatite" />
+
+
+        <TextView
+            android:id="@+id/an_facturineplatite"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="An"
+            android:textColor="@color/black"
+            android:textSize="25dp"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_below="@+id/spinnerluna_facutirneplatite"
+            app:layout_constraintTop_toBottomOf="@+id/spinnerluna_facutirneplatite" />
+
+
+        <Spinner
+            android:id="@+id/spinneran_facutirneplatite"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginStart="16dp"
+            android:outlineAmbientShadowColor="@color/black"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_below="@+id/an_facturineplatite"
+            app:layout_constraintTop_toBottomOf="@+id/an_facturineplatite" />
+
+
+        <Button
+            android:id="@+id/buton_facturineplatite"
+            android:layout_width="wrap_content"
+            android:layout_height="70dp"
+            android:text="Afiseaza Facurile Neplatite"
+            android:outlineAmbientShadowColor="@color/black"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_below="@+id/spinneran_facutirneplatite"
+            app:layout_constraintTop_toBottomOf="@+id/spinneran_facutirneplatite"
+            />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerview_facturineplatite"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_below="@+id/buton_facturineplatite"
+            app:layout_constraintTop_toBottomOf="@+id/buton_facturineplatite"
+            />
+
+    </RelativeLayout>
+
+</ScrollView>

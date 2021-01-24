@@ -46,8 +46,8 @@ public class MainPageFragment extends Fragment {
         facturiView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                FacturiFragment facturiFragment = ((MainActivity)getActivity()).facturiFragment;
-                getActivity().getSupportFragmentManager().beginTransaction().add(R.id.fragment_container, facturiFragment,FacturiFragment.class.getSimpleName()).addToBackStack("facturi").commit();
+                FacturiSiPlatiFragment facturiFragment = ((MainActivity)getActivity()).facturiFragment;
+                getActivity().getSupportFragmentManager().beginTransaction().add(R.id.fragment_container, facturiFragment,FacturiSiPlatiFragment.class.getSimpleName()).addToBackStack("facturi").commit();
             }
         });
 
