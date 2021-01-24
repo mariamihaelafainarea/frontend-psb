@@ -12,7 +12,9 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 
+import ro.pub.cs.systems.eim.myapplicationf.MainActivity;
 import ro.pub.cs.systems.eim.myapplicationf.R;
+import ro.pub.cs.systems.eim.myapplicationf.network.StergereContAsyncTask;
 
 public class ContulMeuFragment  extends Fragment {
 
@@ -27,14 +29,16 @@ public class ContulMeuFragment  extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         buttonDateDeContact = view.findViewById(R.id.cerc_datedecontact);
-        buttonModificaParola = view.findViewById(R.id.cerc_locurideconsum);
-        buttonLocuriDeConsum = view.findViewById(R.id.cerc_modificaparola);
+        buttonModificaParola = view.findViewById(R.id.cerc_modificaparola);
+        buttonLocuriDeConsum = view.findViewById(R.id.cerc_locurideconsum);
         buttonStergereCont = view.findViewById(R.id.cerc_stergerecont);
         paginaPrincipala = view.findViewById(R.id.exit_contulmeu);
 
         buttonDateDeContact.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                DateDeContactFragment dateDeContactFragment = new DateDeContactFragment();
+                getActivity().getSupportFragmentManager().beginTransaction().add(R.id.fragment_container, dateDeContactFragment,DateDeContactFragment.class.getSimpleName().toString()).addToBackStack("datedecontact").commit();
 
             }
         });
@@ -42,6 +46,8 @@ public class ContulMeuFragment  extends Fragment {
         buttonModificaParola.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                ModificareParolaFragment modificareParolaFragment = new ModificareParolaFragment();
+                getActivity().getSupportFragmentManager().beginTransaction().add(R.id.fragment_container, modificareParolaFragment,ModificareParolaFragment.class.getSimpleName().toString()).addToBackStack("modificareparola").commit();
 
             }
         });
@@ -49,6 +55,8 @@ public class ContulMeuFragment  extends Fragment {
         buttonLocuriDeConsum.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                LocuriDeConsumFragment locuriDeConsumFragment = new LocuriDeConsumFragment();
+                getActivity().getSupportFragmentManager().beginTransaction().add(R.id.fragment_container, locuriDeConsumFragment,LocuriDeConsumFragment.class.getSimpleName().toString()).addToBackStack("locurideconsum").commit();
 
             }
         });
@@ -56,7 +64,7 @@ public class ContulMeuFragment  extends Fragment {
         buttonStergereCont.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                new StergereContAsyncTask((MainActivity) getActivity()).execute();
             }
         });
 

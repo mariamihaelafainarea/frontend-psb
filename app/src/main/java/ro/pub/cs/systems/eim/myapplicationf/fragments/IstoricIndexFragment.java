@@ -24,7 +24,6 @@ public class IstoricIndexFragment  extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        locatii_istoricIndex = view.findViewById(R.id.adress_spinner_istoric);
         veziIstoricButton = view.findViewById(R.id.afiseaza_index);
 
         veziIstoricButton.setOnClickListener(new View.OnClickListener() {

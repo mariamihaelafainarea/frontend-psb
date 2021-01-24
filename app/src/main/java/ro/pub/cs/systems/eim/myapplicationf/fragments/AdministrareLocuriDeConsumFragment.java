@@ -11,17 +11,18 @@ import androidx.fragment.app.Fragment;
 
 import ro.pub.cs.systems.eim.myapplicationf.R;
 
-public class ListarePlatiFragment extends Fragment {
+public class AdministrareLocuriDeConsumFragment extends Fragment {
 
 
-    @Override
-    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
-    }
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.administrare_facturineplatite, container, false);
+        return inflater.inflate(R.layout.administrare_locuriconsum, container, false);
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
     }
 }

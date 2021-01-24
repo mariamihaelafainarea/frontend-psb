@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="70dp"
+    android:background="@color/white"
+    android:padding="10dp">
+
+
+    <TextView
+        android:id="@+id/identificator"
+        android:layout_width="95dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="10dp"
+        android:foregroundGravity="center_vertical"
+        android:gravity="left|center_vertical"
+        android:text="11148487"
+        android:textColor="@color/black"
+        android:textSize="15dp" />
+
+    <TextView
+        android:id="@+id/adresa"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="10dp"
+        android:layout_toEndOf="@+id/identificator"
+        android:foregroundGravity="center_vertical"
+        android:gravity="center_vertical"
+        android:text="Aleea Murelor nr 252"
+        android:textColor="@color/black"
+        android:textSize="15dp"
+        app:layout_constraintEnd_toEndOf="@+id/identificator"
+        tools:layout_editor_absoluteY="60dp" />
+
+
+    <TextView
+        android:id="@+id/codpostal_locatii"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="10dp"
+        android:layout_toEndOf="@+id/adresa"
+        android:foregroundGravity="center_vertical"
+        android:gravity="center_vertical"
+        android:text="9052146"
+        android:textColor="@color/black"
+        android:textSize="15dp"
+        app:layout_constraintEnd_toEndOf="@+id/adresa"
+        tools:layout_editor_absoluteY="60dp" />
+
+    <TextView
+        android:id="@+id/oras_locatii"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="10dp"
+        android:layout_toEndOf="@+id/codpostal_locatii"
+        android:foregroundGravity="center_vertical"
+        android:gravity="center_vertical"
+        android:text="Constanta"
+        android:textColor="@color/black"
+        android:textSize="15dp"
+        app:layout_constraintEnd_toEndOf="@+id/codpostal_locatii"
+        tools:layout_editor_absoluteY="60dp" />
+
+
+    <ImageView
+        android:id="@+id/remove_material_icon"
+        android:layout_width="24dp"
+        android:layout_height="30dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="4dp"
+        android:layout_marginEnd="11dp"
+        android:src="@drawable/remove"
+        app:layout_constraintEnd_toEndOf="@+id/codpostal_locatii"
+        tools:layout_editor_absoluteY="60dp" />
+
+</RelativeLayout>
