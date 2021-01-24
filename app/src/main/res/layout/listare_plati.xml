@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/white"
+    android:layout_width="match_parent"
+    android:fillViewport="true"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:orientation="vertical" android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/logo"
+        >
+
+
+        <TextView
+            android:id="@+id/header_admnistrarefacturineplatite"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="100dp"
+            android:layout_marginEnd="40dp"
+
+            android:foregroundGravity="center"
+            android:gravity="center"
+            android:text="Listare Plati"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="17sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/label_locconsum_administrarefacturineplatite"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="164dp"
+            android:text="Loc Consum"
+            android:textColor="@color/black"
+            android:textSize="24dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <Spinner
+            android:id="@+id/spinner_locconsum_administrarefacturineplatite"
+            android:layout_width="350dp"
+            android:layout_height="25dp"
+            android:layout_below="@+id/label_locconsum_administrarefacturineplatite"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="15dp"
+            android:outlineAmbientShadowColor="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/label_locconsum_administrarefacturineplatite" />
+
+        <TextView
+            android:id="@+id/label_luna_administrarefacturineplatite"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/spinner_locconsum_administrarefacturineplatite"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="15dp"
+            android:text="Luna"
+            android:textColor="@color/black"
+            android:textSize="24dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/spinner_locconsum_administrarefacturineplatite" />
+
+
+        <Spinner
+            android:id="@+id/spinner_luna_administrarefacturineplatite"
+            android:layout_width="100dp"
+            android:layout_height="25dp"
+            android:layout_below="@+id/label_luna_administrarefacturineplatite"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="15dp"
+            android:outlineAmbientShadowColor="@color/black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/label_luna_administrarefacturineplatite" />
+
+
+        <TextView
+            android:id="@+id/label_an_administrarefacturineplatite"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/spinner_luna_administrarefacturineplatite"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="15dp"
+            android:text="An"
+            android:textColor="@color/black"
+            android:textSize="24dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/spinner_luna_administrarefacturineplatite" />
+
+
+        <Spinner
+            android:id="@+id/spinner_an_administrarefacturineplatite"
+            android:layout_width="100dp"
+            android:layout_height="25dp"
+            android:layout_below="@+id/label_an_administrarefacturineplatite"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="15dp"
+            android:outlineAmbientShadowColor="@color/black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/label_an_administrarefacturineplatite" />
+
+
+        <Button
+            android:id="@+id/button_listeazafacturineplatite"
+            android:layout_width="200dp"
+            android:layout_height="60dp"
+            android:layout_below="@+id/spinner_an_administrarefacturineplatite"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="15dp"
+            android:text="Listeaza Platile"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/spinner_an_administrarefacturineplatite"
+            android:backgroundTint="@color/blue" />
+
+        <Button
+            android:id="@+id/exit_listareplati"
+            android:layout_width="100dp"
+            android:layout_height="60dp"
+            android:layout_below="@+id/spinner_an_administrarefacturineplatite"
+            android:layout_marginLeft="285dp"
+            android:layout_marginTop="15dp"
+            android:text="Inapoi"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/spinner_an_administrarefacturineplatite"
+            android:backgroundTint="@color/blue" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerview_administrarefacturineplatite"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_below="@+id/button_listeazafacturineplatite"
+            app:layout_constraintTop_toBottomOf="@+id/button_listeazafacturineplatite"
+            />
+
+    </RelativeLayout>
+
+</ScrollView>

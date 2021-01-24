@@ -31,14 +31,16 @@ public class FacturiFragment extends Fragment {
         buttonAdministrareFacturiNeplatite.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                AdministrareFacturiNeplatiteFragment administrareFacturiNeplatiteFragment = new AdministrareFacturiNeplatiteFragment();
+                getActivity().getSupportFragmentManager().beginTransaction().add(R.id.fragment_container, administrareFacturiNeplatiteFragment, AdministrareFacturiNeplatiteFragment.class.getSimpleName()).addToBackStack("administrare_facturi_neplatite").commit();
             }
         });
 
         buttonListarePlati.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                ListarePlatiFragment listarePlatiFragment = new ListarePlatiFragment();
+                getActivity().getSupportFragmentManager().beginTransaction().add(R.id.fragment_container, listarePlatiFragment, ListarePlatiFragment.class.getSimpleName()).addToBackStack("listare_plati").commit();
             }
         });
 
