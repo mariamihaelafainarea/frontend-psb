@@ -4,26 +4,38 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.Spinner;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 
 import ro.pub.cs.systems.eim.myapplicationf.R;
 
 public class AdministrareFacturiNeplatiteFragment extends Fragment {
 
-    Spinner locatiiFacturi;
+    Button inapoiButton;
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
+        inapoiButton = view.findViewById(R.id.exit_admnistrarefacturineplatite);
+
+        inapoiButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                FragmentManager fm = (FragmentManager) getActivity().getSupportFragmentManager();
+                fm.popBackStack ("administrare_facturi_neplatite", FragmentManager.POP_BACK_STACK_INCLUSIVE);
+            }
+        });
     }
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.administrare_facturineplatite, container, false);
+        return inflater.inflate(R.layout.administrare_facturi_neplatite, container, false);
     }
 }

@@ -28,7 +28,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/label_locatie_transmitereindex"
+        android:id="@+id/label_locconsum_transmitereindex"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
@@ -36,7 +36,7 @@
         android:layout_marginTop="115dp"
         android:foregroundGravity="center"
         android:gravity="center"
-        android:text="Locatie"
+        android:text="Loc Consum"
         android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="24dp"
@@ -45,7 +45,7 @@
 
 
     <Spinner
-        android:id="@+id/spinner_locatie_transmitereindex"
+        android:id="@+id/spinner_locconsum_transmitereindex"
         android:layout_width="370dp"
         android:layout_height="25dp"
         android:layout_marginStart="25dp"
@@ -53,7 +53,7 @@
         android:outlineAmbientShadowColor="@color/black"
         android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/label_locatie_transmitereindex" />
+        app:layout_constraintTop_toBottomOf="@+id/label_locconsum_transmitereindex" />
 
     <TextView
         android:id="@+id/label_index_transmitereindex"
@@ -69,7 +69,7 @@
         android:textColor="@color/black"
         android:textSize="24dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinner_locatie_transmitereindex" />
+        app:layout_constraintTop_toBottomOf="@+id/spinner_locconsum_transmitereindex" />
 
     <EditText
         android:id="@+id/edit_index_transmitereindex"
@@ -147,7 +147,7 @@
         android:layout_height="60dp"
         android:layout_centerHorizontal="true"
         android:layout_marginStart="40dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="15dp"
         android:layout_marginEnd="40dp"
         android:backgroundTint="@color/blue"
         android:gravity="center"

@@ -6,13 +6,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-import de.hdodenhof.circleimageview.CircleImageView;
 import ro.pub.cs.systems.eim.myapplicationf.LoginActivity;
 import ro.pub.cs.systems.eim.myapplicationf.MainActivity;
 import ro.pub.cs.systems.eim.myapplicationf.R;
@@ -46,8 +44,8 @@ public class MainPageFragment extends Fragment {
         facturiView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                FacturiSiPlatiFragment facturiFragment = ((MainActivity)getActivity()).facturiFragment;
-                getActivity().getSupportFragmentManager().beginTransaction().add(R.id.fragment_container, facturiFragment,FacturiSiPlatiFragment.class.getSimpleName()).addToBackStack("facturi").commit();
+                FacturiFragment facturiFragment = ((MainActivity)getActivity()).facturiFragment;
+                getActivity().getSupportFragmentManager().beginTransaction().add(R.id.fragment_container, facturiFragment, FacturiFragment.class.getSimpleName()).addToBackStack("facturi").commit();
             }
         });
 
@@ -55,7 +53,7 @@ public class MainPageFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 ContulMeuFragment contulMeuFragment = ((MainActivity)getActivity()).contulMeuFragment;
-                getActivity().getSupportFragmentManager().beginTransaction().add(R.id.fragment_container, contulMeuFragment,ContulMeuFragment.class.getSimpleName().toString()).addToBackStack("contulmeu").commit();
+                getActivity().getSupportFragmentManager().beginTransaction().add(R.id.fragment_container, contulMeuFragment, ContulMeuFragment.class.getSimpleName().toString()).addToBackStack("contulmeu").commit();
             }
         });
 
@@ -63,14 +61,14 @@ public class MainPageFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 PuncteFragment puncteFragment = ((MainActivity)getActivity()).puncteFragment;
-                getActivity().getSupportFragmentManager().beginTransaction().add(R.id.fragment_container, puncteFragment,PuncteFragment.class.getSimpleName()).addToBackStack("puncte").commit();
+                getActivity().getSupportFragmentManager().beginTransaction().add(R.id.fragment_container, puncteFragment, PuncteFragment.class.getSimpleName()).addToBackStack("puncte").commit();
             }
         });
         contactView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 ContactFragment contactFragment = ((MainActivity)getActivity()).contactFragment;
-                getActivity().getSupportFragmentManager().beginTransaction().add(R.id.fragment_container, contactFragment,ContactFragment.class.getSimpleName()).addToBackStack("contact").commit();
+                getActivity().getSupportFragmentManager().beginTransaction().add(R.id.fragment_container, contactFragment, ContactFragment.class.getSimpleName()).addToBackStack("contact").commit();
             }
         });
         logoutView.setOnClickListener(new View.OnClickListener() {

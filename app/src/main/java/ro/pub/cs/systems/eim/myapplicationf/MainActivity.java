@@ -18,7 +18,6 @@ import com.google.android.material.navigation.NavigationView;
 import ro.pub.cs.systems.eim.myapplicationf.fragments.ContactFragment;
 import ro.pub.cs.systems.eim.myapplicationf.fragments.ContulMeuFragment;
 import ro.pub.cs.systems.eim.myapplicationf.fragments.FacturiFragment;
-import ro.pub.cs.systems.eim.myapplicationf.fragments.FacturiSiPlatiFragment;
 import ro.pub.cs.systems.eim.myapplicationf.fragments.IndexFragment;
 import ro.pub.cs.systems.eim.myapplicationf.fragments.MainPageFragment;
 import ro.pub.cs.systems.eim.myapplicationf.fragments.PuncteFragment;
@@ -28,7 +27,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private DrawerLayout drawer;
     public NavigationView navigationView;
     public IndexFragment indexFragment;
-    public FacturiSiPlatiFragment facturiFragment;
+    public FacturiFragment facturiFragment;
     public ContulMeuFragment contulMeuFragment;
     public PuncteFragment puncteFragment;
     public ContactFragment contactFragment;
@@ -65,7 +64,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
 
         indexFragment = new IndexFragment();
-        facturiFragment = new FacturiSiPlatiFragment();
+        facturiFragment = new FacturiFragment();
         contulMeuFragment = new ContulMeuFragment();
         puncteFragment = new PuncteFragment();
         contactFragment = new ContactFragment();

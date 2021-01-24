@@ -36,7 +36,7 @@ public class TransmitereIndexFragment extends Fragment {
         transmitereIndexButton = view.findViewById(R.id.button_transmitereindex);
         inapoiButton = view.findViewById(R.id.exit_transmitereindex);
 
-        addressSpinner = view.findViewById(R.id.spinner_locatie_transmitereindex);
+        addressSpinner = view.findViewById(R.id.spinner_locconsum_transmitereindex);
         indexEditText = view.findViewById(R.id.edit_index_transmitereindex);
         anEditText = view.findViewById(R.id.edit_an_transmitereindex);
         lunaSpinner = view.findViewById(R.id.spinner_luna_transmitereindex);
