@@ -11,6 +11,7 @@ import android.widget.Spinner;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 
 import ro.pub.cs.systems.eim.myapplicationf.R;
 import ro.pub.cs.systems.eim.myapplicationf.network.GetAllIstoricIndexesAsyncTask;
@@ -19,13 +20,15 @@ public class IstoricIndexFragment  extends Fragment {
 
     Spinner locatii_istoricIndex;
     Button veziIstoricButton;
+    Button inapoiButton;
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        locatii_istoricIndex = view.findViewById(R.id.adress_spinner_istoric);
-        veziIstoricButton = view.findViewById(R.id.afiseaza_index);
+        locatii_istoricIndex = view.findViewById(R.id.spinner_locconsum_istoricindex);
+        veziIstoricButton = view.findViewById(R.id.button_istoricindex);
+        inapoiButton = view.findViewById(R.id.exit_istoricindex);
 
         veziIstoricButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -36,10 +39,14 @@ public class IstoricIndexFragment  extends Fragment {
             }
         });
 
-
-
+        inapoiButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                FragmentManager fm = (FragmentManager) getActivity().getSupportFragmentManager();
+                fm.popBackStack ("istoric_index", FragmentManager.POP_BACK_STACK_INCLUSIVE);
+            }
+        });
     }
-
 
     @Nullable
     @Override

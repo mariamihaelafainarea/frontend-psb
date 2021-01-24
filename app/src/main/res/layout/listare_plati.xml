@@ -18,7 +18,7 @@
 
 
         <TextView
-            android:id="@+id/header_admnistrarefacturineplatite"
+            android:id="@+id/header_listareplati"
             android:layout_width="150dp"
             android:layout_height="50dp"
             android:layout_alignParentTop="true"
