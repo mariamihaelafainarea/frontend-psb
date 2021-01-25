@@ -38,7 +38,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/label_locconsum_administrarefacturineplatite"
+            android:id="@+id/label_locconsum_listareplati"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="25dp"
@@ -51,100 +51,100 @@
 
 
         <Spinner
-            android:id="@+id/spinner_locconsum_administrarefacturineplatite"
+            android:id="@+id/spinner_locconsum_listareplati"
             android:layout_width="350dp"
             android:layout_height="25dp"
-            android:layout_below="@+id/label_locconsum_administrarefacturineplatite"
+            android:layout_below="@+id/label_locconsum_listareplati"
             android:layout_marginLeft="25dp"
             android:layout_marginTop="15dp"
             android:outlineAmbientShadowColor="@color/black"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/label_locconsum_administrarefacturineplatite" />
+            app:layout_constraintTop_toBottomOf="@+id/label_locconsum_listareplati" />
 
         <TextView
-            android:id="@+id/label_luna_administrarefacturineplatite"
+            android:id="@+id/label_luna_listareplati"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/spinner_locconsum_administrarefacturineplatite"
+            android:layout_below="@+id/spinner_locconsum_listareplati"
             android:layout_marginStart="25dp"
             android:layout_marginTop="15dp"
             android:text="Luna"
             android:textColor="@color/black"
             android:textSize="24dp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/spinner_locconsum_administrarefacturineplatite" />
+            app:layout_constraintTop_toBottomOf="@+id/spinner_locconsum_listareplati" />
 
 
         <Spinner
-            android:id="@+id/spinner_luna_administrarefacturineplatite"
+            android:id="@+id/spinner_luna_listareplati"
             android:layout_width="100dp"
             android:layout_height="25dp"
-            android:layout_below="@+id/label_luna_administrarefacturineplatite"
+            android:layout_below="@+id/label_luna_listareplati"
             android:layout_marginStart="25dp"
             android:layout_marginTop="15dp"
             android:outlineAmbientShadowColor="@color/black"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/label_luna_administrarefacturineplatite" />
+            app:layout_constraintTop_toBottomOf="@+id/label_luna_listareplati" />
 
 
         <TextView
-            android:id="@+id/label_an_administrarefacturineplatite"
+            android:id="@+id/label_an_listareplati"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/spinner_luna_administrarefacturineplatite"
+            android:layout_below="@+id/spinner_luna_listareplati"
             android:layout_marginStart="25dp"
             android:layout_marginTop="15dp"
             android:text="An"
             android:textColor="@color/black"
             android:textSize="24dp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/spinner_luna_administrarefacturineplatite" />
+            app:layout_constraintTop_toBottomOf="@+id/spinner_luna_listareplati" />
 
 
         <Spinner
-            android:id="@+id/spinner_an_administrarefacturineplatite"
+            android:id="@+id/spinner_an_listareplati"
             android:layout_width="100dp"
             android:layout_height="25dp"
-            android:layout_below="@+id/label_an_administrarefacturineplatite"
+            android:layout_below="@+id/label_an_listareplati"
             android:layout_marginStart="25dp"
             android:layout_marginTop="15dp"
             android:outlineAmbientShadowColor="@color/black"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/label_an_administrarefacturineplatite" />
+            app:layout_constraintTop_toBottomOf="@+id/label_an_listareplati" />
 
 
         <Button
-            android:id="@+id/button_listeazafacturineplatite"
+            android:id="@+id/button_listareplati"
             android:layout_width="200dp"
             android:layout_height="60dp"
-            android:layout_below="@+id/spinner_an_administrarefacturineplatite"
+            android:layout_below="@+id/spinner_an_listareplati"
             android:layout_marginLeft="25dp"
             android:layout_marginTop="15dp"
             android:text="Listeaza Platile"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/spinner_an_administrarefacturineplatite"
+            app:layout_constraintTop_toBottomOf="@+id/spinner_an_listareplati"
             android:backgroundTint="@color/blue" />
 
         <Button
             android:id="@+id/exit_listareplati"
             android:layout_width="100dp"
             android:layout_height="60dp"
-            android:layout_below="@+id/spinner_an_administrarefacturineplatite"
+            android:layout_below="@+id/spinner_an_listareplati"
             android:layout_marginLeft="285dp"
             android:layout_marginTop="15dp"
             android:text="Inapoi"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/spinner_an_administrarefacturineplatite"
+            app:layout_constraintTop_toBottomOf="@+id/spinner_an_listareplati"
             android:backgroundTint="@color/blue" />
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerview_administrarefacturineplatite"
+            android:id="@+id/recyclerview_listareplati"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:layout_constraintStart_toStartOf="parent"
-            android:layout_below="@+id/button_listeazafacturineplatite"
-            app:layout_constraintTop_toBottomOf="@+id/button_listeazafacturineplatite"
+            android:layout_below="@+id/button_listareplati"
+            app:layout_constraintTop_toBottomOf="@+id/button_listareplati"
             />
 
     </RelativeLayout>

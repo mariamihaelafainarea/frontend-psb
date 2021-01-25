@@ -85,35 +85,6 @@
 
 
     <TextView
-        android:id="@+id/label_an_transmitereindex"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginStart="25dp"
-        android:layout_marginTop="12dp"
-        android:foregroundGravity="center"
-        android:gravity="center"
-        android:text="An"
-        android:textAlignment="center"
-        android:textColor="@color/black"
-        android:textSize="24dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edit_index_transmitereindex" />
-
-    <EditText
-        android:id="@+id/edit_an_transmitereindex"
-        android:layout_width="wrap_content"
-        android:layout_height="25dp"
-        android:layout_marginStart="25dp"
-        android:layout_marginTop="8dp"
-        android:textColor="@color/black"
-        android:textColorHint="@color/black"
-        android:textSize="20dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/label_an_transmitereindex" />
-
-
-    <TextView
         android:id="@+id/label_luna_transmitereindex"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -127,7 +98,7 @@
         android:textColor="@color/black"
         android:textSize="24dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edit_an_transmitereindex" />
+        app:layout_constraintTop_toBottomOf="@+id/edit_index_transmitereindex" />
 
     <Spinner
         android:id="@+id/spinner_luna_transmitereindex"
@@ -139,6 +110,34 @@
         android:outlineSpotShadowColor="@color/black"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/label_luna_transmitereindex" />
+
+    <TextView
+        android:id="@+id/label_an_transmitereindex"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="12dp"
+        android:foregroundGravity="center"
+        android:gravity="center"
+        android:text="An"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="24dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/spinner_luna_transmitereindex" />
+
+    <EditText
+        android:id="@+id/edit_an_transmitereindex"
+        android:layout_width="wrap_content"
+        android:layout_height="25dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="8dp"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
+        android:textSize="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/label_an_transmitereindex" />
 
 
     <Button
@@ -156,7 +155,7 @@
         android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinner_luna_transmitereindex" />
+        app:layout_constraintTop_toBottomOf="@+id/edit_an_transmitereindex" />
 
     <Button
         android:id="@+id/exit_transmitereindex"
