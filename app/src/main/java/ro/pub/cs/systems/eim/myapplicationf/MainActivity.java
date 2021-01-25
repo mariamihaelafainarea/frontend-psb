@@ -46,6 +46,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getIntent().getExtras().getString("email");
+
         setContentView(R.layout.activity_main);
         fragmentManager = getSupportFragmentManager();
         drawer = findViewById(R.id.drawer_layout);

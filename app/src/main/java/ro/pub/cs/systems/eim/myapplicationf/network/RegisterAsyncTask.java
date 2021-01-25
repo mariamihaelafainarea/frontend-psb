@@ -3,12 +3,9 @@ package ro.pub.cs.systems.eim.myapplicationf.network;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
-import android.content.Intent;
 import android.os.AsyncTask;
 import android.util.Log;
 import android.view.View;
-
-import android.view.WindowManager;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
@@ -25,29 +22,35 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.List;
 
-import ro.pub.cs.systems.eim.myapplicationf.LoginActivity;
 import ro.pub.cs.systems.eim.myapplicationf.MainActivity;
 
-public class LoginTaskAsync extends AsyncTask<String, Void, JSONObject> {
+public class RegisterAsyncTask extends AsyncTask<String,Void, JSONObject> {
     Activity activity;
-    public LoginTaskAsync(Activity activity) {
+
+    public RegisterAsyncTask(Activity activity) {
         this.activity = activity;
     }
 
-
     @Override
-    protected JSONObject doInBackground(String... params) {
+    protected JSONObject doInBackground(String... strings) {
 
-        String username = params[0].toString();
-        String password = params[1].toString();
+        String nume = strings[0].toString();
+        String prenume = strings[1].toString();
+        String telefon = strings[2].toString();
+        String email = strings[3].toString();
+        String parola = strings[4].toString();
 
         try {
             HttpClient httpClient = new DefaultHttpClient();
-            HttpPost httpPost = new HttpPost("http://10.0.2.2:5001/authenticate");
+            HttpPost httpPost = new HttpPost("http://10.0.2.2:5001/api/clients/register");
 
             List<NameValuePair> parametrii = new ArrayList<NameValuePair>();
-            parametrii.add(new BasicNameValuePair("username", username));
-            parametrii.add(new BasicNameValuePair("password", password));
+            parametrii.add(new BasicNameValuePair("lastname", nume));
+            parametrii.add(new BasicNameValuePair("firstName", prenume));
+            parametrii.add(new BasicNameValuePair("phoneNumber", telefon));
+            parametrii.add(new BasicNameValuePair("email", email));
+            parametrii.add(new BasicNameValuePair("password", parola));
+
 
             UrlEncodedFormEntity urlEncodedFormEntity = new UrlEncodedFormEntity(parametrii, HTTP.UTF_8);
             httpPost.setEntity(urlEncodedFormEntity);
@@ -76,35 +79,54 @@ public class LoginTaskAsync extends AsyncTask<String, Void, JSONObject> {
     @Override
     protected void onPostExecute(JSONObject jsonObject) {
         super.onPostExecute(jsonObject);
-        ((LoginActivity)activity).getWindow().clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
-        if(jsonObject != null) {
-            try {
-                Intent i = new Intent(activity, MainActivity.class);
-                i.putExtra("email", jsonObject.getString("email"));
-                activity.startActivity(i);
-            }catch (Exception e){
-                e.printStackTrace();
+
+        try {
+            if (jsonObject != null && jsonObject.getString("response").equals("done")) {
+                AlertDialog.Builder builder = new AlertDialog.Builder(activity);
+
+                builder.setTitle("Contul a fost creat !");
+
+                builder.setMessage("Intra pe mail si confirma adresa!")
+                        .setCancelable(true)
+                        .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                dialog.cancel();
+                                activity.finish();
+                            }
+
+                        });
+
+                AlertDialog alertDialog = builder.create();
+                alertDialog.show();
+
+            }else {
+
             }
-        }else {
+
+        }catch (Exception e ){
+            e.printStackTrace();
             AlertDialog.Builder builder = new AlertDialog.Builder(activity);
 
-            builder.setTitle("Contul nu exista !");
+            builder.setTitle("A aparut o eroare !");
 
-            builder.setMessage("Datele de conectare nu sunt cele asteptate. Te rog sa reincerci!")
+            builder.setMessage("Ne pare rau, a aparut o eroare. Reincearca!")
                     .setCancelable(true)
                     .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface dialog, int id) {
                             dialog.cancel();
+//                            TODO:
+//                            resetFragment();
                         }
+
                     });
 
             AlertDialog alertDialog = builder.create();
             alertDialog.show();
-
+            e.printStackTrace();
         }
-
-
-
     }
+
+
+
 
 }
