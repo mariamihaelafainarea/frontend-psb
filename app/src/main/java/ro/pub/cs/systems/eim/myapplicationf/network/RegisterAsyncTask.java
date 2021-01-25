@@ -36,9 +36,9 @@ public class RegisterAsyncTask extends AsyncTask<String,Void, JSONObject> {
 
         String nume = strings[0].toString();
         String prenume = strings[1].toString();
-        String telefon = strings[2].toString();
-        String email = strings[3].toString();
-        String parola = strings[4].toString();
+        String email = strings[2].toString();
+        String parola = strings[3].toString();
+        String telefon = strings[4].toString();
 
         try {
             HttpClient httpClient = new DefaultHttpClient();
