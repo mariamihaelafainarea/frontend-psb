@@ -16,6 +16,7 @@ import org.apache.http.NameValuePair;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.HttpPost;
+import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.protocol.HTTP;
@@ -43,28 +44,27 @@ public class LoginTaskAsync extends AsyncTask<String, Void, JSONObject> {
 
         try {
             HttpClient httpClient = new DefaultHttpClient();
-            HttpPost httpPost = new HttpPost("http://10.0.2.2:5001/authenticate");
+            HttpPost httpPost = new HttpPost("http://10.0.2.2:5001/api/clients/login");
 
-            List<NameValuePair> parametrii = new ArrayList<NameValuePair>();
-            parametrii.add(new BasicNameValuePair("username", username));
-            parametrii.add(new BasicNameValuePair("password", password));
+            JSONObject jsonObj = new JSONObject();
+            jsonObj.put("email", username);
+            jsonObj.put("password", password);
 
-            UrlEncodedFormEntity urlEncodedFormEntity = new UrlEncodedFormEntity(parametrii, HTTP.UTF_8);
-            httpPost.setEntity(urlEncodedFormEntity);
-
-            HttpResponse httpPostResponse = httpClient.execute(httpPost);
-            HttpEntity httpPostEntity = httpPostResponse.getEntity();
+            StringEntity entity = new StringEntity(jsonObj.toString());
+            httpPost.setEntity(entity);
+            httpPost.setHeader("Accept", "application/json");
+            httpPost.setHeader("Content-type", "application/json");
+            HttpResponse httpResponse = httpClient.execute(httpPost);
+            HttpEntity httpPostEntity = httpResponse.getEntity();
             if (httpPostEntity != null) {
                 String result = EntityUtils.toString(httpPostEntity);
                 try {
                     return new JSONObject(result);
                 }catch (Exception e) {
-                    e.printStackTrace();
                     return null;
                 }
-            }else {
+            } else {
                 Log.i("a", "Not found");
-
             }
         } catch (Exception exception) {
             exception.printStackTrace();
