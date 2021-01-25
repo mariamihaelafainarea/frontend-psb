@@ -7,6 +7,25 @@
     android:background="@drawable/logo"
     tools:context=".MainActivity">
 
+    <TextView
+        android:id="@+id/header_index"
+        android:layout_width="150dp"
+        android:layout_height="25dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="78dp"
+        android:layout_marginEnd="40dp"
+        android:foregroundGravity="center"
+        android:gravity="center"
+
+        android:text="Index"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="17sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <ImageView
         android:id="@+id/cerc_transmitereindex"
         android:layout_width="150dp"
@@ -60,25 +79,6 @@
 
         app:layout_constraintStart_toStartOf="@+id/cerc_istoricindex"
         app:layout_constraintTop_toTopOf="@+id/cerc_istoricindex" />
-
-    <TextView
-        android:id="@+id/header_index"
-        android:layout_width="150dp"
-        android:layout_height="25dp"
-        android:layout_centerHorizontal="true"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="78dp"
-        android:layout_marginEnd="40dp"
-        android:foregroundGravity="center"
-        android:gravity="center"
-
-        android:text="Istoric Index"
-        android:textAlignment="center"
-        android:textColor="@color/white"
-        android:textSize="17sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/exit_index"
