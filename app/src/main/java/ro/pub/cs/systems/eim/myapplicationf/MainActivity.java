@@ -17,6 +17,7 @@ import com.google.android.material.navigation.NavigationView;
 
 import ro.pub.cs.systems.eim.myapplicationf.fragments.ContactFragment;
 import ro.pub.cs.systems.eim.myapplicationf.fragments.ContulMeuFragment;
+import ro.pub.cs.systems.eim.myapplicationf.fragments.DespreFragment;
 import ro.pub.cs.systems.eim.myapplicationf.fragments.FacturiFragment;
 import ro.pub.cs.systems.eim.myapplicationf.fragments.IndexFragment;
 import ro.pub.cs.systems.eim.myapplicationf.fragments.MainPageFragment;
@@ -31,6 +32,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     public ContulMeuFragment contulMeuFragment;
     public PuncteFragment puncteFragment;
     public ContactFragment contactFragment;
+    public DespreFragment despreFragment;
 
     private Button indexButton;
     private Button facturiButton;
@@ -72,7 +74,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         contulMeuFragment = new ContulMeuFragment();
         puncteFragment = new PuncteFragment();
         contactFragment = new ContactFragment();
-
+        despreFragment = new DespreFragment();
     }
 
     @Override
