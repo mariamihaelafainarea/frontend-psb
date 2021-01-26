@@ -46,8 +46,8 @@ public class ContulMeuFragment  extends Fragment {
         buttonModificaParola.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ModificareParolaFragment modificareParolaFragment = new ModificareParolaFragment();
-                getActivity().getSupportFragmentManager().beginTransaction().add(R.id.fragment_container, modificareParolaFragment,ModificareParolaFragment.class.getSimpleName().toString()).addToBackStack("modificareparola").commit();
+                ModificaParolaFragment modificareParolaFragment = new ModificaParolaFragment();
+                getActivity().getSupportFragmentManager().beginTransaction().add(R.id.fragment_container, modificareParolaFragment,ModificaParolaFragment.class.getSimpleName().toString()).addToBackStack("modificaparola").commit();
 
             }
         });
