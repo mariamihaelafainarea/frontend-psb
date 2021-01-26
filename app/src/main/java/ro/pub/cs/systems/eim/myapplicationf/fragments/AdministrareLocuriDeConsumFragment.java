@@ -33,7 +33,7 @@ public class AdministrareLocuriDeConsumFragment extends Fragment {
 
         dataset = new ArrayList<>();
         locConsumAdapter = new LocConsumAdapter(dataset, AdministrareLocuriDeConsumFragment.this,(MainActivity)getActivity());
-        RecyclerView recyclerView = (RecyclerView) getView().findViewById(R.id.locurideconsum_recyclerview);
+        RecyclerView recyclerView = (RecyclerView) getView().findViewById(R.id.administrare_locuri_consum_recyclerview);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getContext());
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setItemAnimator(new DefaultItemAnimator());

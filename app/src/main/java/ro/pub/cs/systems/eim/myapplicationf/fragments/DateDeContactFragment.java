@@ -18,16 +18,15 @@ import ro.pub.cs.systems.eim.myapplicationf.R;
 import ro.pub.cs.systems.eim.myapplicationf.network.GetDateDeContactTaskAsync;
 
 public class DateDeContactFragment extends Fragment {
-
-    public EditText nume;
-    public EditText prenume;
-    public EditText email;
-    public EditText telefon;
-
+    EditText nume;
+    EditText prenume;
+    EditText email;
+    EditText telefon;
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
         nume = view.findViewById(R.id.nume_edit);
         prenume = view.findViewById(R.id.prenume_edit);
         email = view.findViewById(R.id.email_edit);

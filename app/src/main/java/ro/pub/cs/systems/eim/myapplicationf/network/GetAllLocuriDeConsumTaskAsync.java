@@ -36,7 +36,7 @@ public class GetAllLocuriDeConsumTaskAsync extends AsyncTask<String,Void, JSONAr
             HttpClient httpClient = new DefaultHttpClient();
             HttpGet httpGet = new HttpGet("http://10.0.2.2:5001/api/new/locations");
 
-            httpGet.setHeader("Authorization","Bearer"+ jwtToken);
+            httpGet.setHeader("Authorization","Bearer "+ jwtToken);
             httpGet.setHeader("Accept", "application/json");
             httpGet.setHeader("Content-type", "application/json");
             HttpResponse httpResponse = httpClient.execute(httpGet);
@@ -72,7 +72,8 @@ public class GetAllLocuriDeConsumTaskAsync extends AsyncTask<String,Void, JSONAr
                         q.setAddress(j.getString("streetAddress"));
                         q.setCity(j.getString("city"));
                         q.setPostalcode(j.getString("postalCode"));
-
+                        System.err.println("AICI");
+                        System.out.println(q.toString());
                         administrareLocuriDeConsumFragment.getDataset().add(q);
                         administrareLocuriDeConsumFragment.getLocConsumAdapter().notifyDataSetChanged();
 

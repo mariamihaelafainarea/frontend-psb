@@ -24,7 +24,6 @@ public class GetDateDeContactTaskAsync extends AsyncTask<String,Void, JSONObject
     DateDeContactFragment dateDeContactFragment;
 
     public GetDateDeContactTaskAsync(MainActivity mainActivity, DateDeContactFragment dateDeContactFragment) {
-
         this.mainActivity = mainActivity;
         this.dateDeContactFragment = dateDeContactFragment;
     }
@@ -36,9 +35,10 @@ public class GetDateDeContactTaskAsync extends AsyncTask<String,Void, JSONObject
 
         try {
             HttpClient httpClient = new DefaultHttpClient();
-            HttpGet httpGet = new HttpGet("http://10.0.2.2:5001/api/clients/informations");
+            HttpPost httpGet = new HttpPost("http://10.0.2.2:5001/api/clients/informations");
+            System.err.println(jwtToken);
 
-            httpGet.setHeader("Authorization","Bearer "+ jwtToken);
+            httpGet.setHeader("Authorization","Bearer "+ mainActivity.getJwtTokenCode());
             httpGet.setHeader("Accept", "application/json");
             httpGet.setHeader("Content-type", "application/json");
             HttpResponse httpResponse = httpClient.execute(httpGet);
@@ -64,6 +64,7 @@ public class GetDateDeContactTaskAsync extends AsyncTask<String,Void, JSONObject
     @Override
     protected void onPostExecute(JSONObject jsonObject) {
         super.onPostExecute(jsonObject);
+
 
         try {
             if(jsonObject != null) {
