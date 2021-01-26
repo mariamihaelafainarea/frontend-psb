@@ -23,9 +23,11 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.List;
 
+import ro.pub.cs.systems.eim.myapplicationf.LoginActivity;
 import ro.pub.cs.systems.eim.myapplicationf.MainActivity;
+import ro.pub.cs.systems.eim.myapplicationf.RegisterActivity;
 
-public class RegisterAsyncTask extends AsyncTask<String,Void, JSONObject> {
+public class RegisterAsyncTask extends AsyncTask<String,Void, Integer> {
     Activity activity;
 
     public RegisterAsyncTask(Activity activity) {
@@ -33,7 +35,7 @@ public class RegisterAsyncTask extends AsyncTask<String,Void, JSONObject> {
     }
 
     @Override
-    protected JSONObject doInBackground(String... strings) {
+    protected Integer doInBackground(String... strings) {
 
         String nume = strings[0].toString();
         String prenume = strings[1].toString();
@@ -57,17 +59,7 @@ public class RegisterAsyncTask extends AsyncTask<String,Void, JSONObject> {
             httpPost.setHeader("Accept", "application/json");
             httpPost.setHeader("Content-type", "application/json");
             HttpResponse httpResponse = httpClient.execute(httpPost);
-            HttpEntity httpPostEntity = httpResponse.getEntity();
-            if (httpPostEntity != null) {
-                String result = EntityUtils.toString(httpPostEntity);
-                try {
-                    return new JSONObject(result);
-                }catch (Exception e) {
-                    return null;
-                }
-            } else {
-                Log.i("a", "Not found");
-            }
+            return httpResponse.getStatusLine().getStatusCode();
         } catch (Exception exception) {
             exception.printStackTrace();
         }
@@ -76,53 +68,78 @@ public class RegisterAsyncTask extends AsyncTask<String,Void, JSONObject> {
     }
 
     @Override
-    protected void onPostExecute(JSONObject jsonObject) {
-        super.onPostExecute(jsonObject);
+    protected void onPostExecute(Integer code) {
+        super.onPostExecute(code);
         activity.finish();
-//        try {
-//            if (jsonObject != null && jsonObject.getString("response").equals("done")) {
-//                AlertDialog.Builder builder = new AlertDialog.Builder(activity);
-//
-//                builder.setTitle("Contul a fost creat !");
-//
-//                builder.setMessage("Intra pe mail si confirma adresa!")
-//                        .setCancelable(true)
-//                        .setPositiveButton("OK", new DialogInterface.OnClickListener() {
-//                            public void onClick(DialogInterface dialog, int id) {
-//                                dialog.cancel();
-//                                activity.finish();
-//                            }
-//
-//                        });
-//
-//                AlertDialog alertDialog = builder.create();
-//                alertDialog.show();
-//
-//            }else {
-//
-//            }
-//
-//        }catch (Exception e ){
-//            e.printStackTrace();
-//            AlertDialog.Builder builder = new AlertDialog.Builder(activity);
-//
-//            builder.setTitle("A aparut o eroare !");
-//
-//            builder.setMessage("Ne pare rau, a aparut o eroare. Reincearca!")
-//                    .setCancelable(true)
-//                    .setPositiveButton("OK", new DialogInterface.OnClickListener() {
-//                        public void onClick(DialogInterface dialog, int id) {
-//                            dialog.cancel();
-////                            TODO:
-////                            resetFragment();
-//                        }
-//
-//                    });
-//
-//            AlertDialog alertDialog = builder.create();
-//            alertDialog.show();
-//            e.printStackTrace();
-//        }
+        try {
+            if (code != null && code == 200) {
+                AlertDialog.Builder builder = new AlertDialog.Builder(activity);
+
+                builder.setTitle("Contul a fost creat !");
+
+                builder.setMessage("Intra pe mail si confirma adresa!")
+                        .setCancelable(true)
+                        .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                dialog.cancel();
+                                activity.finish();
+                            }
+
+                        });
+
+                AlertDialog alertDialog = builder.create();
+                alertDialog.show();
+
+            }else {
+                AlertDialog.Builder builder = new AlertDialog.Builder(activity);
+
+                builder.setTitle("A aparut o eroare !");
+
+                builder.setMessage("Ne pare rau, a aparut o eroare. Reincearca!")
+                        .setCancelable(true)
+                        .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                dialog.cancel();
+                                resetFragment();
+                            }
+
+                        });
+
+                AlertDialog alertDialog = builder.create();
+                alertDialog.show();
+            }
+
+        }catch (Exception e ){
+            e.printStackTrace();
+            AlertDialog.Builder builder = new AlertDialog.Builder(activity);
+
+            builder.setTitle("A aparut o eroare !");
+
+            builder.setMessage("Ne pare rau, a aparut o eroare. Reincearca!")
+                    .setCancelable(true)
+                    .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int id) {
+                            dialog.cancel();
+                            resetFragment();
+                        }
+
+                    });
+
+            AlertDialog alertDialog = builder.create();
+            alertDialog.show();
+            e.printStackTrace();
+        }
+    }
+
+
+    public void resetFragment() {
+        RegisterActivity registerActivity = (RegisterActivity) this.activity;
+        registerActivity.getEmailEditText().setText("");
+        registerActivity.getNumeEditText().setText("");
+        registerActivity.getPrenumeEditText().setText("");
+        registerActivity.getTelefonEditText().setText("");
+        registerActivity.getParolaEditText().setText("");
+
     }
 
 

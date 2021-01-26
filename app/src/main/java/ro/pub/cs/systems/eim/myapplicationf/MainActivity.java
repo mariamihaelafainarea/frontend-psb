@@ -39,6 +39,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private Button contactButton;
     private Button logoutButton;
 
+    String jwtTokenCode = "";
+
     private MainPageFragment mainPageFragment;
 
 
@@ -46,7 +48,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getIntent().getExtras().getString("email");
+        jwtTokenCode = getIntent().getExtras().getString("jwtTokenCode");
 
         setContentView(R.layout.activity_main);
         fragmentManager = getSupportFragmentManager();

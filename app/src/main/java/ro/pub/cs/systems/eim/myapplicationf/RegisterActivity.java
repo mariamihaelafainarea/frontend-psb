@@ -54,6 +54,51 @@ public class RegisterActivity extends Activity {
 
     }
 
+    public EditText getNumeEditText() {
+        return numeEditText;
+    }
 
+    public void setNumeEditText(EditText numeEditText) {
+        this.numeEditText = numeEditText;
+    }
 
+    public EditText getPrenumeEditText() {
+        return prenumeEditText;
+    }
+
+    public void setPrenumeEditText(EditText prenumeEditText) {
+        this.prenumeEditText = prenumeEditText;
+    }
+
+    public EditText getEmailEditText() {
+        return emailEditText;
+    }
+
+    public void setEmailEditText(EditText emailEditText) {
+        this.emailEditText = emailEditText;
+    }
+
+    public EditText getParolaEditText() {
+        return parolaEditText;
+    }
+
+    public void setParolaEditText(EditText parolaEditText) {
+        this.parolaEditText = parolaEditText;
+    }
+
+    public EditText getTelefonEditText() {
+        return telefonEditText;
+    }
+
+    public void setTelefonEditText(EditText telefonEditText) {
+        this.telefonEditText = telefonEditText;
+    }
+
+    public Button getRegister() {
+        return register;
+    }
+
+    public void setRegister(Button register) {
+        this.register = register;
+    }
 }

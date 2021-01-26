@@ -55,16 +55,20 @@ public class LoginTaskAsync extends AsyncTask<String, Void, JSONObject> {
             httpPost.setHeader("Accept", "application/json");
             httpPost.setHeader("Content-type", "application/json");
             HttpResponse httpResponse = httpClient.execute(httpPost);
-            HttpEntity httpPostEntity = httpResponse.getEntity();
-            if (httpPostEntity != null) {
-                String result = EntityUtils.toString(httpPostEntity);
-                try {
-                    return new JSONObject(result);
-                }catch (Exception e) {
-                    return null;
+            if(httpResponse.getStatusLine().getStatusCode() == 200) {
+                HttpEntity httpPostEntity = httpResponse.getEntity();
+                if (httpPostEntity != null) {
+                    String result = EntityUtils.toString(httpPostEntity);
+                    try {
+                        return new JSONObject(result);
+                    } catch (Exception e) {
+                        return null;
+                    }
+                } else {
+                    Log.i("a", "Not found");
                 }
-            } else {
-                Log.i("a", "Not found");
+            }else {
+                return null;
             }
         } catch (Exception exception) {
             exception.printStackTrace();
@@ -80,7 +84,7 @@ public class LoginTaskAsync extends AsyncTask<String, Void, JSONObject> {
         if(jsonObject != null) {
             try {
                 Intent i = new Intent(activity, MainActivity.class);
-                i.putExtra("email", jsonObject.getString("email"));
+                i.putExtra("jwtTokenCode", jsonObject.getString("jwtTokenCode"));
                 activity.startActivity(i);
             }catch (Exception e){
                 e.printStackTrace();
