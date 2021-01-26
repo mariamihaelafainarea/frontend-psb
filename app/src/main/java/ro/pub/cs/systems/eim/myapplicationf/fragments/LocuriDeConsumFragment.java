@@ -39,7 +39,6 @@ public class LocuriDeConsumFragment extends Fragment {
         adaugareLocDeConsum.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
                 AdaugareLocConsumFragment adaugareLocConsumFragment = new AdaugareLocConsumFragment();
                 getActivity().getSupportFragmentManager().beginTransaction().add(R.id.fragment_container,
                         adaugareLocConsumFragment,
