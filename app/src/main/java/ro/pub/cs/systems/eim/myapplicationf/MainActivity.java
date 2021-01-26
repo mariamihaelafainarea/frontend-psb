@@ -45,8 +45,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     private MainPageFragment mainPageFragment;
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -68,7 +66,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         getSupportFragmentManager().beginTransaction().add(R.id.fragment_container, mainPageFragment,MainPageFragment.class.getSimpleName()).commit();
 
-
         indexFragment = new IndexFragment();
         facturiFragment = new FacturiFragment();
         contulMeuFragment = new ContulMeuFragment();
@@ -87,7 +84,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         drawer.closeDrawer(GravityCompat.START);
         return true;
-
     }
 
     public void onBackPressed() {

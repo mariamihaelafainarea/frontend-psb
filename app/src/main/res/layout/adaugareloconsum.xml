@@ -7,132 +7,118 @@
     android:background="@drawable/logo"
     tools:context=".MainActivity">
 
-
     <TextView
-        android:id="@+id/identificator_label"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/header_adaugarelocconsum"
+        android:layout_width="200dp"
+        android:layout_height="25dp"
         android:layout_centerHorizontal="true"
-        android:layout_marginStart="28dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="78dp"
+        android:layout_marginEnd="40dp"
         android:foregroundGravity="center"
         android:gravity="center"
-        android:text="Identificator"
-        android:textColor="@color/black"
-        android:textSize="30dp"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="150dp" />
 
-    <EditText
-        android:id="@+id/identificator_edittext"
-        android:layout_width="350dp"
-        android:layout_height="70dp"
-        android:layout_marginTop="15dp"
+        android:text="Adaugare Loc Consum"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="17sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/identificator_label" />
-
-
+        app:layout_constraintTop_toTopOf="parent" />
 
 
     <TextView
-        android:id="@+id/adresa_label"
+        android:id="@+id/label_adresa_adaugarelocconsum"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="115dp"
         android:foregroundGravity="center"
         android:gravity="center"
         android:text="Adresa"
         android:textColor="@color/black"
-        android:textSize="30dp"
+        android:textSize="24dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/identificator_edittext" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/edit_index"
-        android:layout_width="wrap_content"
-        android:layout_height="50dp"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="8dp"
-        android:text="Str. Moinesti, Nr. 14, Bl. PS3, Sc. A, Et. 2, Apt. 8"
+        android:id="@+id/edit_adresa_adaugarelocconsum"
+        android:layout_width="350dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="15dp"
+        android:textColor="@color/black"
         android:textSize="20dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/adresa_label" />
-
+        app:layout_constraintTop_toBottomOf="@+id/label_adresa_adaugarelocconsum" />
 
 
     <TextView
-        android:id="@+id/codpostal_label"
+        android:id="@+id/label_codpostal_adaugarelocconsum"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="15dp"
         android:foregroundGravity="center"
         android:gravity="center"
         android:text="Cod postal"
         android:textColor="@color/black"
-        android:textSize="30dp"
+        android:textSize="24dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edit_index" />
+        app:layout_constraintTop_toBottomOf="@+id/edit_adresa_adaugarelocconsum" />
 
     <EditText
-        android:id="@+id/codpostal_edit"
-        android:layout_width="wrap_content"
-        android:layout_height="50dp"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="8dp"
-        android:text="941444"
+        android:id="@+id/edit_codpostal_adaugarelocconsum"
+        android:layout_width="100dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="15dp"
+        android:textColor="@color/black"
         android:textSize="20dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/codpostal_label" />
+        app:layout_constraintTop_toBottomOf="@+id/label_codpostal_adaugarelocconsum" />
 
     <TextView
-        android:id="@+id/oras_label"
+        android:id="@+id/label_oras_adaugarelocconsum"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="15dp"
         android:foregroundGravity="center"
         android:gravity="center"
         android:text="Oras"
         android:textColor="@color/black"
-        android:textSize="30dp"
+        android:textSize="24dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/codpostal_edit" />
+        app:layout_constraintTop_toBottomOf="@+id/edit_codpostal_adaugarelocconsum" />
 
     <EditText
-        android:id="@+id/oras_edit"
-        android:layout_width="wrap_content"
-        android:layout_height="50dp"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="8dp"
-        android:text="Vaslui"
+        android:id="@+id/edit_oras_adaugarelocconsum"
+        android:layout_width="100dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="15dp"
+        android:textColor="@color/black"
         android:textSize="20dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/oras_label" />
-
+        app:layout_constraintTop_toBottomOf="@+id/label_oras_adaugarelocconsum" />
 
     <Button
-        android:id="@+id/exit_adaugareConsum"
-        android:layout_width="200dp"
+        android:id="@+id/button_adaugarelocconsum"
+        android:layout_width="100dp"
         android:layout_height="60dp"
         android:layout_below="@+id/forgotpass"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="15dp"
         android:backgroundTint="@color/blue"
         android:gravity="center"
         android:text="Adauga"
         android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.54"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/oras_edit" />
-
-
-
-
+        app:layout_constraintTop_toBottomOf="@+id/edit_oras_adaugarelocconsum" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

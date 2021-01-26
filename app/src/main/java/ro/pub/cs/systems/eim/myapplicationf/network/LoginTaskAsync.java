@@ -35,10 +35,8 @@ public class LoginTaskAsync extends AsyncTask<String, Void, JSONObject> {
         this.activity = activity;
     }
 
-
     @Override
     protected JSONObject doInBackground(String... params) {
-
         String username = params[0].toString();
         String password = params[1].toString();
 
@@ -106,9 +104,5 @@ public class LoginTaskAsync extends AsyncTask<String, Void, JSONObject> {
             alertDialog.show();
 
         }
-
-
-
     }
-
 }
