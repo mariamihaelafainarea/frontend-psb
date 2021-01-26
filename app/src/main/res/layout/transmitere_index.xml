@@ -74,12 +74,11 @@
     <EditText
         android:id="@+id/edit_index_transmitereindex"
         android:layout_width="wrap_content"
-        android:layout_height="25dp"
-        android:layout_marginStart="25dp"
-        android:layout_marginTop="15dp"
+        android:layout_height="50dp"
+        android:hint="Introdu indexul aici"
+        android:textColorHint="@color/gray"
         android:textColor="@color/black"
-        android:textColorHint="@color/black"
-        android:textSize="20dp"
+        android:layout_marginStart="25dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/label_index_transmitereindex" />
 

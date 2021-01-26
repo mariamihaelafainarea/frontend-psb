@@ -13,8 +13,12 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 
+import java.nio.charset.MalformedInputException;
+
 import ro.pub.cs.systems.eim.myapplicationf.LoginActivity;
+import ro.pub.cs.systems.eim.myapplicationf.MainActivity;
 import ro.pub.cs.systems.eim.myapplicationf.R;
+import ro.pub.cs.systems.eim.myapplicationf.network.AddIndexTaskAsync;
 
 public class IndexFragment extends Fragment {
 
@@ -44,6 +48,7 @@ public class IndexFragment extends Fragment {
         buttonIstoricIndex.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 getActivity().getSupportFragmentManager().beginTransaction().add(R.id.fragment_container, istoricIndexFragment, TransmitereIndexFragment.class.getSimpleName()).addToBackStack("istoric_index").commit();
 
             }
