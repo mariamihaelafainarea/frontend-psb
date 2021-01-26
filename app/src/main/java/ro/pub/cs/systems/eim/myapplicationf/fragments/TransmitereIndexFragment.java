@@ -15,6 +15,9 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 
+import java.util.ArrayList;
+import java.util.Calendar;
+
 import ro.pub.cs.systems.eim.myapplicationf.MainActivity;
 import ro.pub.cs.systems.eim.myapplicationf.R;
 import ro.pub.cs.systems.eim.myapplicationf.network.TrasnmitereIndexAsyncTask;
@@ -26,7 +29,7 @@ public class TransmitereIndexFragment extends Fragment {
 
     Spinner addressSpinner;
     EditText indexEditText;
-    EditText anEditText;
+    Spinner anSpinner;
     Spinner lunaSpinner;
 
     @Override
@@ -38,8 +41,22 @@ public class TransmitereIndexFragment extends Fragment {
 
         addressSpinner = view.findViewById(R.id.spinner_locconsum_transmitereindex);
         indexEditText = view.findViewById(R.id.edit_index_transmitereindex);
-        anEditText = view.findViewById(R.id.edit_an_transmitereindex);
+        anSpinner = view.findViewById(R.id.edit_an_transmitereindex);
         lunaSpinner = view.findViewById(R.id.spinner_luna_transmitereindex);
+
+        //SPINNER  AN
+
+        ArrayList<String> years = new ArrayList<String>();
+        int thisYear = Calendar.getInstance().get(Calendar.YEAR);
+        for (int i = 1900; i <= thisYear; i++) {
+            years.add(Integer.toString(i));
+        }
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_spinner_item, years);
+
+        anSpinner.setAdapter(adapter);
+
+
+        //SPINNER LUNA
 
         ArrayAdapter<CharSequence> staticAdapter = ArrayAdapter
                 .createFromResource(getActivity(), R.array.lunidinan,
@@ -57,7 +74,7 @@ public class TransmitereIndexFragment extends Fragment {
             @Override
             public void onClick(View view) {
                     String luna = lunaSpinner.getSelectedItem().toString();
-                    String an = anEditText.getText().toString();
+                    String an = anSpinner.getSelectedItem().toString();
                     String adresa = addressSpinner.getSelectedItem().toString();
                     String index = indexEditText.getText().toString();
                     new TrasnmitereIndexAsyncTask((MainActivity)getActivity()).execute(adresa,index,luna,an);
