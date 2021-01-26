@@ -5,11 +5,13 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 
 import ro.pub.cs.systems.eim.myapplicationf.LoginActivity;
 import ro.pub.cs.systems.eim.myapplicationf.MainActivity;
@@ -23,16 +25,20 @@ public class MainPageFragment extends Fragment {
     ImageView puncteView;
     ImageView contactView;
     ImageView logoutView;
+    Button despreButton;
+
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Bundle args = getArguments();
 
         indexView = (ImageView) view.findViewById(R.id.index);
-        facturiView =  (ImageView)view.findViewById(R.id.facturisiplati);
-        contulMeuView =  (ImageView)view.findViewById(R.id.contulmeu);
-        puncteView =  (ImageView)view.findViewById(R.id.puncte);
-        contactView =  (ImageView)view.findViewById(R.id.contact);
-        logoutView =  (ImageView)view.findViewById(R.id.logout);
+        facturiView = (ImageView)view.findViewById(R.id.facturisiplati);
+        contulMeuView = (ImageView)view.findViewById(R.id.contulmeu);
+        puncteView = (ImageView)view.findViewById(R.id.puncte);
+        contactView = (ImageView)view.findViewById(R.id.contact);
+        logoutView = (ImageView)view.findViewById(R.id.logout);
+        despreButton = view.findViewById(R.id.despre);
+
         indexView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -80,10 +86,14 @@ public class MainPageFragment extends Fragment {
             }
         });
 
-
-
+        despreButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                DespreFragment despreFragment = ((MainActivity)getActivity()).despreFragment;
+                getActivity().getSupportFragmentManager().beginTransaction().add(R.id.fragment_container, despreFragment, DespreFragment.class.getSimpleName()).addToBackStack("despre").commit();
+            }
+        });
     }
-
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
