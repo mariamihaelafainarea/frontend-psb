@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private Button contactButton;
     private Button logoutButton;
 
-    String jwtTokenCode = "";
+    public String jwtTokenCode = "";
 
     private MainPageFragment mainPageFragment;
 
@@ -97,5 +97,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         }
     }
 
+    public String getJwtTokenCode() {
+        return jwtTokenCode;
+    }
 
+    public void setJwtTokenCode(String jwtTokenCode) {
+        this.jwtTokenCode = jwtTokenCode;
+    }
 }
