@@ -64,7 +64,7 @@ public class ContulMeuFragment  extends Fragment {
         buttonStergereCont.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                new StergereContAsyncTask((MainActivity) getActivity()).execute();
+                // new StergereContAsyncTask((MainActivity) getActivity()).execute();
             }
         });
 
