@@ -6,6 +6,8 @@ import android.content.DialogInterface;
 import android.os.AsyncTask;
 import android.util.Log;
 
+import androidx.fragment.app.FragmentManager;
+
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
@@ -16,11 +18,15 @@ import org.apache.http.util.EntityUtils;
 import org.json.JSONObject;
 
 import ro.pub.cs.systems.eim.myapplicationf.MainActivity;
+import ro.pub.cs.systems.eim.myapplicationf.RegisterActivity;
+import ro.pub.cs.systems.eim.myapplicationf.fragments.AdaugareLocConsumFragment;
 
 public class AddLocDeConsumTaskAsync extends AsyncTask<String, Void, Integer> {
     Activity activity;
-    public AddLocDeConsumTaskAsync(Activity activity) {
+    AdaugareLocConsumFragment adaugareLocConsumFragment;
+    public AddLocDeConsumTaskAsync(Activity activity,AdaugareLocConsumFragment adaugareLocConsumFragment) {
         this.activity = activity;
+        this.adaugareLocConsumFragment = adaugareLocConsumFragment;
     }
 
     @Override
@@ -69,7 +75,9 @@ public class AddLocDeConsumTaskAsync extends AsyncTask<String, Void, Integer> {
                         .setCancelable(true)
                         .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int id) {
+                                resetFragment();
                                 dialog.cancel();
+
                             }
                         });
 
@@ -112,6 +120,12 @@ public class AddLocDeConsumTaskAsync extends AsyncTask<String, Void, Integer> {
 
             e.printStackTrace();
         }
+    }
+
+    public void resetFragment() {
+        adaugareLocConsumFragment.getAdresaEditText().setText("");
+        adaugareLocConsumFragment.getCodPostalEditText().setText("");
+        adaugareLocConsumFragment.getOrasEditText().setText("");
     }
 }
 

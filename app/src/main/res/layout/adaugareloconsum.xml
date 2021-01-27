@@ -45,7 +45,7 @@
     <EditText
         android:id="@+id/edit_adresa_adaugarelocconsum"
         android:layout_width="350dp"
-        android:layout_height="25dp"
+        android:layout_height="45dp"
         android:layout_marginStart="25dp"
         android:layout_marginTop="15dp"
         android:textColor="@color/black"
@@ -72,7 +72,7 @@
     <EditText
         android:id="@+id/edit_codpostal_adaugarelocconsum"
         android:layout_width="100dp"
-        android:layout_height="25dp"
+        android:layout_height="45dp"
         android:layout_marginStart="25dp"
         android:layout_marginTop="15dp"
         android:textColor="@color/black"
@@ -98,7 +98,7 @@
     <EditText
         android:id="@+id/edit_oras_adaugarelocconsum"
         android:layout_width="100dp"
-        android:layout_height="25dp"
+        android:layout_height="45dp"
         android:layout_marginStart="25dp"
         android:layout_marginTop="15dp"
         android:textColor="@color/black"

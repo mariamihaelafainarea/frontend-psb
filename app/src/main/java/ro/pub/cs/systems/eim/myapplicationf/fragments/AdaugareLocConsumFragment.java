@@ -18,6 +18,17 @@ import ro.pub.cs.systems.eim.myapplicationf.R;
 import ro.pub.cs.systems.eim.myapplicationf.network.AddLocDeConsumTaskAsync;
 
 public class AdaugareLocConsumFragment extends Fragment {
+    public EditText getAdresaEditText() {
+        return adresaEditText;
+    }
+
+    public EditText getCodPostalEditText() {
+        return codPostalEditText;
+    }
+
+    public EditText getOrasEditText() {
+        return orasEditText;
+    }
 
     EditText adresaEditText;
     EditText codPostalEditText;
@@ -38,7 +49,7 @@ public class AdaugareLocConsumFragment extends Fragment {
         adaugaButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                new AddLocDeConsumTaskAsync(getActivity()).execute(
+                new AddLocDeConsumTaskAsync(getActivity(), AdaugareLocConsumFragment.this).execute(
                         adresaEditText.getText().toString(),
                         codPostalEditText.getText().toString(),
                         orasEditText.getText().toString()
