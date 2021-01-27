@@ -34,22 +34,69 @@
 
 
     <TextView
-        android:id="@+id/text_despre"
-        android:layout_width="365dp"
-        android:layout_height="50dp"
+        android:id="@+id/text_descriere"
+        android:layout_width="345dp"
+        android:layout_height="100dp"
         android:layout_centerHorizontal="true"
         android:layout_marginStart="25dp"
-        android:layout_marginTop="150dp"
+        android:layout_marginTop="148dp"
         android:foregroundGravity="center"
         android:gravity="center"
 
-        android:text="djasodiasodpiasopdasiopdjuasiodhjasiodhjsakjdhaslkjhdaskhdsajkhdsajkhdasjkdhaskjda"
-        android:textAlignment="center"
+        android:text="EasyPay este inspirata dupa modelul myEnel, aceasta din urma reprezentand serviciul de administrare si gestionare dedicat clientilor furnizorului de energie. La aceasta aplicatie au contribuit:"
         android:textColor="@color/black"
         android:textSize="17sp"
         app:layout_constraintBottom_toBottomOf="@+id/cerc_listareplati"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/text_nume1"
+        android:layout_width="345dp"
+        android:layout_height="50dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="25dp"
+        android:foregroundGravity="center"
+        android:gravity="center"
+
+        android:text="- Maria Mihaela Fainarea (SPF)"
+        android:textColor="@color/black"
+        android:textSize="17sp"
+        app:layout_constraintBottom_toBottomOf="@+id/cerc_listareplati"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_descriere" />
+
+    <TextView
+        android:id="@+id/text_nume2"
+        android:layout_width="345dp"
+        android:layout_height="50dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="25dp"
+        android:foregroundGravity="center"
+        android:gravity="center"
+
+        android:text="- Horia Alexandru Dragomir (SPF)"
+        android:textColor="@color/black"
+        android:textSize="17sp"
+        app:layout_constraintBottom_toBottomOf="@+id/cerc_listareplati"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_nume1" />
+
+    <TextView
+        android:id="@+id/text_nume3"
+        android:layout_width="345dp"
+        android:layout_height="50dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="25dp"
+        android:foregroundGravity="center"
+        android:gravity="center"
+
+        android:text="- George Cristian Munteanu (EGOV)"
+        android:textColor="@color/black"
+        android:textSize="17sp"
+        app:layout_constraintBottom_toBottomOf="@+id/cerc_listareplati"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_nume2" />
 
 
     <de.hdodenhof.circleimageview.CircleImageView
@@ -65,7 +112,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.338"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_despre" />
+        app:layout_constraintTop_toBottomOf="@id/text_nume3" />
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/android"
@@ -108,8 +155,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/about_us_acs" />
-
-
 
 
 
