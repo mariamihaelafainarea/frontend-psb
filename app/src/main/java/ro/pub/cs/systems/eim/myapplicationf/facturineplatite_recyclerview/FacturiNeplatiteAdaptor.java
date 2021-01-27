@@ -35,9 +35,9 @@ public class FacturiNeplatiteAdaptor extends RecyclerView.Adapter<FacturiNeplati
     public void onBindViewHolder(@NonNull FacturiNeplatiteViewHolder holder, int position) {
         final int copyI = position;
         final FacturiNeplatite factura = dataSet.get(position);
-        holder.first.setText(factura.getFirstDay());
-        holder.last.setText(factura.getLastDay());
-        holder.value.setText(factura.getValue());
+        holder.first.setText(String.valueOf(factura.getFirstDay()));
+        holder.last.setText(String.valueOf(factura.getLastDay()));
+        holder.value.setText(String.valueOf(factura.getValue()));
 
         ((MainActivity) mainActivity).getWindow().setFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE,
                 WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);

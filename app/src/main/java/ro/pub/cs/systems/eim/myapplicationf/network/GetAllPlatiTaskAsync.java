@@ -36,7 +36,7 @@ public class GetAllPlatiTaskAsync extends AsyncTask<String,Void, JSONArray> {
 
         try {
             HttpClient httpClient = new DefaultHttpClient();
-            HttpPost httpPost = new HttpPost("http://10.0.2.2:5001/api/new/istoric");
+            HttpPost httpPost = new HttpPost("http://10.0.2.2:5001/api/new/bill");
 
 
             JSONObject jsonObj = new JSONObject();

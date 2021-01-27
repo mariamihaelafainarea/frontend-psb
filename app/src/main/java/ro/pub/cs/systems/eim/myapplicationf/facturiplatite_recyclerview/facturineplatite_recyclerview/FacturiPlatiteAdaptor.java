@@ -31,16 +31,9 @@ public class FacturiPlatiteAdaptor extends RecyclerView.Adapter<FacturiPlatiteVi
     public void onBindViewHolder(@NonNull FacturiPlatiteViewHolder holder, int position) {
         final int copyI = position;
         final FacturiNeplatite factura = dataSet.get(position);
-        holder.first.setText(factura.getFirstDay());
-        holder.last.setText(factura.getLastDay());
-        holder.value.setText(factura.getValue());
-        if(factura.getPaid().equals("false")) {
-            holder.paid.setText("neplatit");
-        }else {
-            holder.paid.setText("platit");
-
-        }
-
+        holder.first.setText(String.valueOf(factura.getFirstDay()));
+        holder.last.setText(String.valueOf(factura.getLastDay()));
+        holder.value.setText(String.valueOf(factura.getValue()));
     }
 
     @NonNull
