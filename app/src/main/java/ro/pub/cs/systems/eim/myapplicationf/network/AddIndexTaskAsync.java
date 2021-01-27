@@ -29,9 +29,9 @@ public class AddIndexTaskAsync extends AsyncTask<String,Void, Integer> {
     protected Integer doInBackground(String... strings) {
 
         String streetAddress = strings[0].toString();
-        String value = strings[1].toString();
-        String month = strings[2].toString();
-        String year = strings[3].toString();
+        Long value = Long.parseLong(strings[1]);
+        Long month = Long.parseLong(strings[2]);
+        Long year = Long.parseLong(strings[3]);
 
 
         try {
@@ -40,7 +40,7 @@ public class AddIndexTaskAsync extends AsyncTask<String,Void, Integer> {
 
 
             JSONObject jsonObj = new JSONObject();
-            jsonObj.put("streetAddress", streetAddress);
+            jsonObj.put("streetAdress", streetAddress);
             jsonObj.put("value", value);
             jsonObj.put("month", month);
             jsonObj.put("year", year);

@@ -15,16 +15,14 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 
 import ro.pub.cs.systems.eim.myapplicationf.MainActivity;
 import ro.pub.cs.systems.eim.myapplicationf.R;
-import ro.pub.cs.systems.eim.myapplicationf.models.LocConsum;
+import ro.pub.cs.systems.eim.myapplicationf.network.AddIndexTaskAsync;
 import ro.pub.cs.systems.eim.myapplicationf.network.GetAllLocuriDeConsumTaskAsync;
-import ro.pub.cs.systems.eim.myapplicationf.network.TrasnmitereIndexAsyncTask;
 
 public class TransmitereIndexFragment extends Fragment {
 
@@ -78,7 +76,7 @@ public class TransmitereIndexFragment extends Fragment {
         staticAdapter
                 .setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         lunaSpinner.setAdapter(staticAdapter);
-        String ianuarie = "Ianuarie";
+        String ianuarie = "1";
         int spinnerPosition = staticAdapter.getPosition(ianuarie);
         lunaSpinner.setSelection(spinnerPosition);
         lunaSpinner.setBackgroundColor(Color.parseColor("#a9a9a9"));
@@ -90,7 +88,7 @@ public class TransmitereIndexFragment extends Fragment {
                     String an = anSpinner.getSelectedItem().toString();
                     String adresa = dataset.get(addressSpinner.getSelectedItemPosition());
                     String index = indexEditText.getText().toString();
-                    new TrasnmitereIndexAsyncTask((MainActivity)getActivity()).execute(adresa,index,luna,an);
+                    new AddIndexTaskAsync((MainActivity)getActivity()).execute(adresa,index,luna,an);
             }
         });
 
