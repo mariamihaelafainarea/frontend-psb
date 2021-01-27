@@ -8,6 +8,24 @@
     tools:context=".MainActivity">
 
 
+    <TextView
+        android:id="@+id/header_locuriconsum"
+        android:layout_width="200dp"
+        android:layout_height="25dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="78dp"
+        android:layout_marginEnd="40dp"
+        android:foregroundGravity="center"
+        android:gravity="center"
+
+        android:text="Locuri de Consum"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="17sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/cerc_administrarelocuriconsum"
@@ -54,9 +72,9 @@
         android:layout_centerHorizontal="true"
         android:foregroundGravity="center"
         android:gravity="center"
-        android:textSize="17sp"
-        android:text="Adaugare loc de consum"
+        android:text="Adaugare Loc de Consum"
         android:textColor="@color/white"
+        android:textSize="17sp"
         app:layout_constraintBottom_toBottomOf="@+id/cerc_adaugareloc"
         app:layout_constraintEnd_toEndOf="@+id/cerc_adaugareloc"
         app:layout_constraintStart_toStartOf="@+id/cerc_adaugareloc"
@@ -65,17 +83,16 @@
         />
 
 
-
     <Button
         android:id="@+id/exit_locuriconsum"
-        android:layout_width="200dp"
+        android:layout_width="100dp"
         android:layout_height="60dp"
         android:layout_below="@+id/forgotpass"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="40dp"
         android:backgroundTint="@color/blue"
         android:gravity="center"
-        android:text="Contul meu"
+        android:text="Inapoi"
         android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.54"

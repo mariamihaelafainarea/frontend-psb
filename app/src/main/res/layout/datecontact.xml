@@ -141,7 +141,7 @@
 
     <Button
         android:id="@+id/exit_datecontact"
-        android:layout_width="150dp"
+        android:layout_width="100dp"
         android:layout_height="60dp"
         android:layout_below="@+id/password_edit"
         android:layout_centerHorizontal="true"

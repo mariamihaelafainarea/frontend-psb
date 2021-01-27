@@ -121,4 +121,19 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edit_oras_adaugarelocconsum" />
 
+    <Button
+        android:id="@+id/exit_adaugarelocconsum"
+        android:layout_width="100dp"
+        android:layout_height="60dp"
+        android:layout_below="@+id/password_edit"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        android:backgroundTint="@color/blue"
+        android:gravity="center"
+        android:text="Inapoi"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_adaugarelocconsum" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

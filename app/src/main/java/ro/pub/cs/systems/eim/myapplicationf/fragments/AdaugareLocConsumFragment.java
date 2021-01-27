@@ -12,6 +12,7 @@ import android.widget.EditText;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 
 import ro.pub.cs.systems.eim.myapplicationf.R;
 import ro.pub.cs.systems.eim.myapplicationf.network.AddLocDeConsumTaskAsync;
@@ -22,6 +23,7 @@ public class AdaugareLocConsumFragment extends Fragment {
     EditText codPostalEditText;
     EditText orasEditText;
     Button adaugaButton;
+    Button inapoiButton;
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
@@ -31,6 +33,7 @@ public class AdaugareLocConsumFragment extends Fragment {
         codPostalEditText = view.findViewById(R.id.edit_codpostal_adaugarelocconsum);
         orasEditText = view.findViewById(R.id.edit_oras_adaugarelocconsum);
         adaugaButton = view.findViewById(R.id.button_adaugarelocconsum);
+        inapoiButton = view.findViewById(R.id.exit_adaugarelocconsum);
 
         adaugaButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -40,6 +43,14 @@ public class AdaugareLocConsumFragment extends Fragment {
                         codPostalEditText.getText().toString(),
                         orasEditText.getText().toString()
                 );
+            }
+        });
+
+        inapoiButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                FragmentManager fm = (FragmentManager) getActivity().getSupportFragmentManager();
+                fm.popBackStack ("adaugare_locconsum", FragmentManager.POP_BACK_STACK_INCLUSIVE);
             }
         });
     }
