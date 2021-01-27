@@ -23,6 +23,7 @@ import java.util.ArrayList;
 import java.util.Calendar;
 
 import ro.pub.cs.systems.eim.myapplicationf.MainActivity;
+import ro.pub.cs.systems.eim.myapplicationf.fragments.AdministrareFacturiNeplatiteFragment;
 import ro.pub.cs.systems.eim.myapplicationf.fragments.AdministrareLocuriDeConsumFragment;
 import ro.pub.cs.systems.eim.myapplicationf.fragments.IstoricIndexFragment;
 import ro.pub.cs.systems.eim.myapplicationf.fragments.TransmitereIndexFragment;
@@ -35,6 +36,7 @@ public class GetAllLocuriDeConsumTaskAsync extends AsyncTask<String,Void, JSONAr
     AdministrareLocuriDeConsumFragment administrareLocuriDeConsumFragment;
     TransmitereIndexFragment transmitereIndexFragment;
     IstoricIndexFragment istoricIndexFragment;
+    AdministrareFacturiNeplatiteFragment administrareFacturiNeplatiteFragment;
     public GetAllLocuriDeConsumTaskAsync(Activity activity, AdministrareLocuriDeConsumFragment administrareLocuriDeConsumFragment) {
         this.activity = activity;
         this.administrareLocuriDeConsumFragment = administrareLocuriDeConsumFragment;
@@ -48,6 +50,13 @@ public class GetAllLocuriDeConsumTaskAsync extends AsyncTask<String,Void, JSONAr
     public GetAllLocuriDeConsumTaskAsync(Activity activity, IstoricIndexFragment istoricIndexFragment) {
         this.activity = activity;
         this.istoricIndexFragment = istoricIndexFragment;
+    }
+
+
+
+    public GetAllLocuriDeConsumTaskAsync(Activity activity, AdministrareFacturiNeplatiteFragment administrareFacturiNeplatiteFragment) {
+        this.activity = activity;
+        this.administrareFacturiNeplatiteFragment = administrareFacturiNeplatiteFragment;
     }
 
     @Override
@@ -136,6 +145,40 @@ public class GetAllLocuriDeConsumTaskAsync extends AsyncTask<String,Void, JSONAr
                         }
 
                         istoricIndexFragment.setLocuriConsum(array);
+
+                    }else if(administrareFacturiNeplatiteFragment !=null) {
+                        Spinner s  = administrareFacturiNeplatiteFragment.getAdministrareFacturiSpinner();
+
+
+                        ArrayList<String> years = new ArrayList<String>();
+                        for (int i =0; i < jsonArray.length(); i++) {
+                            JSONObject j = jsonArray.getJSONObject(i);
+                            String nou = j.getString("streetAddress") + " "+ j.getString("city")+ " "+j.getString("postalCode");
+                            years.add(nou);
+
+                        }
+                        ArrayAdapter<String> adapter = new ArrayAdapter<>((MainActivity)activity, android.R.layout.simple_spinner_item, years);
+                        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+                        s.setAdapter(adapter);
+
+                        adapter.notifyDataSetChanged();
+
+                        s.setSelection(0);
+                        s.setBackgroundColor(Color.parseColor("#a9a9a9"));
+                        ArrayList<LocConsum> array = new ArrayList<>();
+
+                        for (int i =0; i < jsonArray.length(); i++) {
+                            JSONObject j = jsonArray.getJSONObject(i);
+                            LocConsum locConsum = new LocConsum();
+                            locConsum.setAddress(j.getString("streetAddress"));
+                            locConsum.setCity(j.getString("city"));
+                            locConsum.setPostalcode(j.getString("postalCode"));
+                            array.add(locConsum);
+
+                        }
+
+                        administrareFacturiNeplatiteFragment.setLocuriConsum(array);
 
                     }else if(transmitereIndexFragment != null) {
 
