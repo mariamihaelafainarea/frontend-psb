@@ -18,11 +18,22 @@ import ro.pub.cs.systems.eim.myapplicationf.R;
 
 public class AdministrareFacturiNeplatiteFragment extends Fragment {
 
+    Button listeazaButton;
     Button inapoiButton;
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
+        listeazaButton = view.findViewById(R.id.button_listeazafacturineplatite);
+        inapoiButton = view.findViewById(R.id.exit_admnistrarefacturineplatite);
+
+        listeazaButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
 
         inapoiButton.setOnClickListener(new View.OnClickListener() {
             @Override
