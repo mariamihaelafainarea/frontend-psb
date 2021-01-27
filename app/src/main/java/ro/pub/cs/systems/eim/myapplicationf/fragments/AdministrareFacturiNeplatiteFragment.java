@@ -13,17 +13,39 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
+import androidx.recyclerview.widget.DefaultItemAnimator;
+import androidx.recyclerview.widget.DividerItemDecoration;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import ro.pub.cs.systems.eim.myapplicationf.MainActivity;
 import ro.pub.cs.systems.eim.myapplicationf.R;
+import ro.pub.cs.systems.eim.myapplicationf.istoricindex_recyclerview.IstoricIndexAdapter;
+import ro.pub.cs.systems.eim.myapplicationf.models.FacturiNeplatite;
+import ro.pub.cs.systems.eim.myapplicationf.models.LocConsum;
+import ro.pub.cs.systems.eim.myapplicationf.network.GetAllIstoricIndexesAsyncTask;
+import ro.pub.cs.systems.eim.myapplicationf.network.GetAllLocuriDeConsumTaskAsync;
 
 public class AdministrareFacturiNeplatiteFragment extends Fragment {
 
     Button listeazaButton;
     Button inapoiButton;
+    Spinner locatii_istoricIndex;
+    List<LocConsum> locuriConsum;
+    List<FacturiNeplatite> dataset;
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
+
+        locatii_istoricIndex = view.findViewById(R.id.spinner_locconsum_administrarefacturineplatite);
+
+        locuriConsum = new ArrayList<>();
+        dataset = new ArrayList<>();
 
         listeazaButton = view.findViewById(R.id.button_listeazafacturineplatite);
         inapoiButton = view.findViewById(R.id.exit_admnistrarefacturineplatite);
@@ -42,6 +64,8 @@ public class AdministrareFacturiNeplatiteFragment extends Fragment {
                 fm.popBackStack ("administrare_facturi_neplatite", FragmentManager.POP_BACK_STACK_INCLUSIVE);
             }
         });
+
+        
     }
 
     @Nullable
