@@ -17,6 +17,7 @@ import ro.pub.cs.systems.eim.myapplicationf.fragments.AdministrareLocuriDeConsum
 import ro.pub.cs.systems.eim.myapplicationf.models.FacturiNeplatite;
 import ro.pub.cs.systems.eim.myapplicationf.models.LocConsum;
 import ro.pub.cs.systems.eim.myapplicationf.network.EraseLocDeConsumTaskAsync;
+import ro.pub.cs.systems.eim.myapplicationf.network.PayTheBillTaskAsync;
 
 public class FacturiNeplatiteAdaptor extends RecyclerView.Adapter<FacturiNeplatiteViewHolder> {
 
@@ -38,19 +39,18 @@ public class FacturiNeplatiteAdaptor extends RecyclerView.Adapter<FacturiNeplati
         holder.last.setText(factura.getLastDay());
         holder.value.setText(factura.getValue());
 
-//
-//        holder.eraseButton.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                //ASTA TB INLOCUITA CU REMOVE PE SERVER
-//                ((MainActivity) mainActivity).getWindow().setFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE,
-//                        WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
-//                new EraseLocDeConsumTaskAsync(mainActivity).execute(loc.getAddress(),loc.getCity(),loc.getPostalcode());
-//                dataSet.remove(copyI);
-//                notifyItemRemoved(copyI);
-//                notifyItemRangeChanged(copyI, dataSet.size());
-//            }
-//        });
+        ((MainActivity) mainActivity).getWindow().setFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE,
+                WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
+        new PayTheBillTaskAsync(mainActivity).execute(dataSet.get(copyI).getFirstDay(),
+                                                        dataSet.get(copyI).getLastDay(),
+                                                        String.valueOf(dataSet.get(copyI).getValue()),
+                                                        facturiNeplatite.getLocuriConsum().get(copyI).getAddress(),
+                                                        facturiNeplatite.getLocuriConsum().get(copyI).getPostalcode(),
+                                                        facturiNeplatite.getLocuriConsum().get(copyI).getCity()
+                                                    );
+        dataSet.remove(copyI);
+        notifyItemRemoved(copyI);
+        notifyItemRangeChanged(copyI, dataSet.size());
 
 
     }
