@@ -24,7 +24,9 @@ import java.util.Calendar;
 
 import ro.pub.cs.systems.eim.myapplicationf.MainActivity;
 import ro.pub.cs.systems.eim.myapplicationf.fragments.AdministrareLocuriDeConsumFragment;
+import ro.pub.cs.systems.eim.myapplicationf.fragments.IstoricIndexFragment;
 import ro.pub.cs.systems.eim.myapplicationf.fragments.TransmitereIndexFragment;
+import ro.pub.cs.systems.eim.myapplicationf.models.IstoricIndex;
 import ro.pub.cs.systems.eim.myapplicationf.models.LocConsum;
 
 public class GetAllLocuriDeConsumTaskAsync extends AsyncTask<String,Void, JSONArray> {
@@ -32,6 +34,7 @@ public class GetAllLocuriDeConsumTaskAsync extends AsyncTask<String,Void, JSONAr
     Activity activity;
     AdministrareLocuriDeConsumFragment administrareLocuriDeConsumFragment;
     TransmitereIndexFragment transmitereIndexFragment;
+    IstoricIndexFragment istoricIndexFragment;
     public GetAllLocuriDeConsumTaskAsync(Activity activity, AdministrareLocuriDeConsumFragment administrareLocuriDeConsumFragment) {
         this.activity = activity;
         this.administrareLocuriDeConsumFragment = administrareLocuriDeConsumFragment;
@@ -40,6 +43,11 @@ public class GetAllLocuriDeConsumTaskAsync extends AsyncTask<String,Void, JSONAr
     public GetAllLocuriDeConsumTaskAsync(Activity activity, TransmitereIndexFragment transmitereIndexFragment) {
         this.activity = activity;
         this.transmitereIndexFragment = transmitereIndexFragment;
+    }
+
+    public GetAllLocuriDeConsumTaskAsync(Activity activity, IstoricIndexFragment istoricIndexFragment) {
+        this.activity = activity;
+        this.istoricIndexFragment = istoricIndexFragment;
     }
 
     @Override
@@ -93,6 +101,17 @@ public class GetAllLocuriDeConsumTaskAsync extends AsyncTask<String,Void, JSONAr
                             System.out.println(q.toString());
                             administrareLocuriDeConsumFragment.getDataset().add(q);
                             administrareLocuriDeConsumFragment.getLocConsumAdapter().notifyDataSetChanged();
+
+                        }
+                    }else if(istoricIndexFragment !=null) {
+                        for (int i = 0; i < jsonArray.length(); i++) {
+                            JSONObject j = jsonArray.getJSONObject(i);
+                            IstoricIndex q = new IstoricIndex();
+                            q.setValue(j.getInt("value"));
+                            q.setMonth(j.getInt("month"));
+                            q.setYear(j.getInt("year"));
+                            istoricIndexFragment.getDataset().add(q);
+                            istoricIndexFragment.getIstoricIndexAdapter().notifyDataSetChanged();
 
                         }
                     }else if(transmitereIndexFragment != null) {

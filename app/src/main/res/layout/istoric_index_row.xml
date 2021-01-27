@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="70dp"
+    android:background="@color/white"
+    android:padding="10dp">
+
+
+    <TextView
+        android:id="@+id/valoareindex"
+        android:layout_width="125dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="10dp"
+        android:layout_toEndOf="@+id/identificator"
+        android:foregroundGravity="center_vertical"
+        android:gravity="center"
+        android:text="150"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@+id/identificator"
+        tools:layout_editor_absoluteY="60dp" />
+
+
+    <TextView
+        android:id="@+id/lunaindex"
+        android:layout_width="125dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="10dp"
+        android:layout_toEndOf="@+id/valoareindex"
+        android:foregroundGravity="center_vertical"
+        android:gravity="center"
+        android:text="Ianuarie"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@+id/valoareindex"
+        tools:layout_editor_absoluteY="60dp" />
+
+    <TextView
+        android:id="@+id/anindex"
+        android:layout_width="125dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="10dp"
+        android:layout_toEndOf="@+id/lunaindex"
+        android:foregroundGravity="center_vertical"
+        android:gravity="center"
+        android:text="2020"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@+id/lunaindex"
+        tools:layout_editor_absoluteY="60dp" />
+
+
+
+</RelativeLayout>
