@@ -12,15 +12,29 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
+import androidx.recyclerview.widget.DefaultItemAnimator;
+import androidx.recyclerview.widget.DividerItemDecoration;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import ro.pub.cs.systems.eim.myapplicationf.MainActivity;
 import ro.pub.cs.systems.eim.myapplicationf.R;
+import ro.pub.cs.systems.eim.myapplicationf.istoricindex_recyclerview.IstoricIndexAdapter;
+import ro.pub.cs.systems.eim.myapplicationf.locconsum_recyclerview.LocConsumAdapter;
+import ro.pub.cs.systems.eim.myapplicationf.models.IstoricIndex;
 import ro.pub.cs.systems.eim.myapplicationf.network.GetAllIstoricIndexesAsyncTask;
+import ro.pub.cs.systems.eim.myapplicationf.network.GetAllLocuriDeConsumTaskAsync;
 
 public class IstoricIndexFragment  extends Fragment {
 
     Spinner locatii_istoricIndex;
     Button veziIstoricButton;
     Button inapoiButton;
+    IstoricIndexAdapter istoricIndexAdapter;
+    public List<IstoricIndex> dataset;
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
@@ -30,12 +44,26 @@ public class IstoricIndexFragment  extends Fragment {
         veziIstoricButton = view.findViewById(R.id.button_istoricindex);
         inapoiButton = view.findViewById(R.id.exit_istoricindex);
 
+
+
+        dataset = new ArrayList<>();
+        istoricIndexAdapter = new IstoricIndexAdapter(dataset, IstoricIndexFragment.this,(MainActivity)getActivity());
+        RecyclerView recyclerView = (RecyclerView) getView().findViewById(R.id.administrare_locuri_consum_recyclerview);
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getContext());
+        recyclerView.setLayoutManager(layoutManager);
+        recyclerView.setItemAnimator(new DefaultItemAnimator());
+        recyclerView.addItemDecoration(new DividerItemDecoration(getActivity().getApplicationContext(), LinearLayoutManager.VERTICAL));
+        recyclerView.setAdapter(istoricIndexAdapter);
+
+
+        new GetAllLocuriDeConsumTaskAsync((MainActivity)getActivity(),IstoricIndexFragment.this).execute(((MainActivity) getActivity()).getJwtTokenCode());
+
+
         veziIstoricButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //trebuie sa aducem tranzactiile de pe server
-                //si sa le pun in recyclerview
-                new GetAllIstoricIndexesAsyncTask(getActivity()).execute();
+
+                new GetAllIstoricIndexesAsyncTask((MainActivity)getActivity(),IstoricIndexFragment.this).execute();
             }
         });
 
@@ -52,5 +80,45 @@ public class IstoricIndexFragment  extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         return inflater.inflate(R.layout.istoric_index, container, false);
+    }
+
+    public Spinner getLocatii_istoricIndex() {
+        return locatii_istoricIndex;
+    }
+
+    public void setLocatii_istoricIndex(Spinner locatii_istoricIndex) {
+        this.locatii_istoricIndex = locatii_istoricIndex;
+    }
+
+    public Button getVeziIstoricButton() {
+        return veziIstoricButton;
+    }
+
+    public void setVeziIstoricButton(Button veziIstoricButton) {
+        this.veziIstoricButton = veziIstoricButton;
+    }
+
+    public Button getInapoiButton() {
+        return inapoiButton;
+    }
+
+    public void setInapoiButton(Button inapoiButton) {
+        this.inapoiButton = inapoiButton;
+    }
+
+    public List<IstoricIndex> getDataset() {
+        return dataset;
+    }
+
+    public void setDataset(List<IstoricIndex> dataset) {
+        this.dataset = dataset;
+    }
+
+    public IstoricIndexAdapter getIstoricIndexAdapter() {
+        return istoricIndexAdapter;
+    }
+
+    public void setIstoricIndexAdapter(IstoricIndexAdapter istoricIndexAdapter) {
+        this.istoricIndexAdapter = istoricIndexAdapter;
     }
 }
