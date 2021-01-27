@@ -215,7 +215,7 @@ public class GetAllLocuriDeConsumTaskAsync extends AsyncTask<String,Void, JSONAr
 
                         }
 
-                        administrareFacturiNeplatiteFragment.setLocuriConsum(array);
+                        listarePlatiFragment.setLocuriConsum(array);
 
                     }else if(transmitereIndexFragment != null) {
 

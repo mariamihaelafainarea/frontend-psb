@@ -54,7 +54,7 @@ public class AdministrareFacturiNeplatiteFragment extends Fragment {
 
 
         facturiNeplatiteAdaptor = new FacturiNeplatiteAdaptor(dataset, AdministrareFacturiNeplatiteFragment.this,(MainActivity)getActivity());
-        RecyclerView recyclerView = (RecyclerView) getView().findViewById(R.id.istoricindex_recyclerview);
+        RecyclerView recyclerView = (RecyclerView) getView().findViewById(R.id.recyclerview_administrarefacturineplatite);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getContext());
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setItemAnimator(new DefaultItemAnimator());

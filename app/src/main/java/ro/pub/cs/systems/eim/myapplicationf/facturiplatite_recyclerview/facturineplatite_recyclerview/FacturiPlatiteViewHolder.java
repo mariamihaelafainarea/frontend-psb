@@ -13,13 +13,12 @@ public class FacturiPlatiteViewHolder extends RecyclerView.ViewHolder {
     public TextView first;
     public TextView last;
     public TextView value;
-    public TextView paid ;
 
     public FacturiPlatiteViewHolder(@NonNull View itemView) {
         super(itemView);
-        first =(TextView) itemView.findViewById(R.id.firstday_facturineplatite);
-        last = (TextView) itemView.findViewById(R.id.lastday_facturineplatite);
-        value = (TextView) itemView.findViewById(R.id.value_facturineplatite);
+        first =(TextView) itemView.findViewById(R.id.firstday_platite);
+        last = (TextView) itemView.findViewById(R.id.lastday_platite);
+        value = (TextView) itemView.findViewById(R.id.valoare_platite);
 
     }
 }
