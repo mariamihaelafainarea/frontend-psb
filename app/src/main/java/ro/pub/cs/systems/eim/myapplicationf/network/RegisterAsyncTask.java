@@ -70,7 +70,7 @@ public class RegisterAsyncTask extends AsyncTask<String,Void, Integer> {
     @Override
     protected void onPostExecute(Integer code) {
         super.onPostExecute(code);
-        activity.finish();
+
         try {
             if (code != null && code == 200) {
                 AlertDialog.Builder builder = new AlertDialog.Builder(activity);
@@ -141,8 +141,4 @@ public class RegisterAsyncTask extends AsyncTask<String,Void, Integer> {
         registerActivity.getParolaEditText().setText("");
 
     }
-
-
-
-
 }

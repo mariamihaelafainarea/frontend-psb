@@ -7,6 +7,7 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import androidx.annotation.Nullable;
+import androidx.fragment.app.FragmentManager;
 
 import ro.pub.cs.systems.eim.myapplicationf.network.RegisterAsyncTask;
 
@@ -19,6 +20,7 @@ public class RegisterActivity extends Activity {
     EditText telefonEditText;
 
     Button register;
+    Button inapoi;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -26,12 +28,13 @@ public class RegisterActivity extends Activity {
 
         setContentView(R.layout.register);
 
-        numeEditText = findViewById(R.id.nume_edit);
-        prenumeEditText = findViewById(R.id.prenume_edit);
-        emailEditText = findViewById(R.id.email_edit);
-        parolaEditText = findViewById(R.id.password_edit);
-        telefonEditText = findViewById(R.id.telefon_edit);
+        numeEditText = findViewById(R.id.edit_nume_register);
+        prenumeEditText = findViewById(R.id.edit_prenume_register);
+        emailEditText = findViewById(R.id.edit_email_register);
+        parolaEditText = findViewById(R.id.edit_password_register);
+        telefonEditText = findViewById(R.id.edit_telefon_register);
         register = findViewById(R.id.button_register);
+        inapoi = findViewById(R.id.exit_register);
 
         register.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -42,16 +45,16 @@ public class RegisterActivity extends Activity {
                                 emailEditText.getText().toString(),
                                 parolaEditText.getText().toString(),
                                 telefonEditText.getText().toString()
-
                         );
             }
         });
 
+        inapoi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
 
-
-
-
-
+            }
+        });
     }
 
     public EditText getNumeEditText() {
