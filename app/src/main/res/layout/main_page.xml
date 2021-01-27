@@ -74,6 +74,16 @@
         android:id="@+id/contact"
         android:layout_width="130dp"
         android:layout_height="130dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="15dp"
+        android:src="@drawable/contact"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/contulmeu" />
+
+    <ImageView
+        android:id="@+id/logout"
+        android:layout_width="130dp"
+        android:layout_height="130dp"
         android:layout_marginTop="15dp"
         android:layout_marginEnd="40dp"
         android:src="@drawable/logout"
@@ -96,16 +106,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
-        android:id="@+id/logout"
-        android:layout_width="130dp"
-        android:layout_height="130dp"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="15dp"
-        android:src="@drawable/contact"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/contulmeu" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

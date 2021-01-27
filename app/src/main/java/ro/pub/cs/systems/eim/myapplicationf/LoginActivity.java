@@ -16,6 +16,7 @@ public class LoginActivity extends Activity {
 
     Button loginButton;
     Button inregistrareButton;
+    Button iesireButton;
     EditText usernameEditText;
     EditText passwordEditText;
     String username = "";
@@ -30,6 +31,7 @@ public class LoginActivity extends Activity {
 
         loginButton = (Button) findViewById(R.id.button_login);
         inregistrareButton = (Button) findViewById(R.id.button_nuaicont);
+        iesireButton = (Button) findViewById(R.id.exit_login);
         usernameEditText = (EditText) findViewById(R.id.edit_email_login);
         passwordEditText = (EditText) findViewById(R.id.edit_password_login);
 
@@ -64,5 +66,11 @@ public class LoginActivity extends Activity {
             }
         });
 
+        iesireButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
     }
 }

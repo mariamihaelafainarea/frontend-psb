@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    >
-<androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/logo"
@@ -32,18 +27,18 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-
     <TextView
         android:id="@+id/text_descriere"
         android:layout_width="345dp"
         android:layout_height="100dp"
         android:layout_centerHorizontal="true"
         android:layout_marginStart="25dp"
-        android:layout_marginTop="148dp"
+        android:layout_marginTop="125dp"
         android:foregroundGravity="center"
         android:gravity="center"
 
         android:text="EasyPay este inspirata dupa modelul myEnel, aceasta din urma reprezentand serviciul de administrare si gestionare dedicat clientilor furnizorului de energie. La aceasta aplicatie au contribuit:"
+        android:textAlignment="textStart"
         android:textColor="@color/black"
         android:textSize="17sp"
         app:layout_constraintBottom_toBottomOf="@+id/cerc_listareplati"
@@ -52,14 +47,16 @@
 
     <TextView
         android:id="@+id/text_nume1"
-        android:layout_width="345dp"
+        android:layout_width="180dp"
         android:layout_height="50dp"
         android:layout_centerHorizontal="true"
         android:layout_marginStart="25dp"
+        android:layout_marginTop="25dp"
         android:foregroundGravity="center"
-        android:gravity="center"
 
-        android:text="- Maria Mihaela Fainarea (SPF)"
+        android:gravity="center"
+        android:text="- Maria Fainarea (SPF)"
+        android:textAlignment="textStart"
         android:textColor="@color/black"
         android:textSize="17sp"
         app:layout_constraintBottom_toBottomOf="@+id/cerc_listareplati"
@@ -68,14 +65,16 @@
 
     <TextView
         android:id="@+id/text_nume2"
-        android:layout_width="345dp"
+        android:layout_width="190dp"
         android:layout_height="50dp"
         android:layout_centerHorizontal="true"
         android:layout_marginStart="25dp"
+        android:layout_marginTop="50dp"
         android:foregroundGravity="center"
-        android:gravity="center"
 
-        android:text="- Horia Alexandru Dragomir (SPF)"
+        android:gravity="center"
+        android:text="- Horia Dragomir (SPF)"
+        android:textAlignment="textStart"
         android:textColor="@color/black"
         android:textSize="17sp"
         app:layout_constraintBottom_toBottomOf="@+id/cerc_listareplati"
@@ -84,68 +83,64 @@
 
     <TextView
         android:id="@+id/text_nume3"
-        android:layout_width="345dp"
+        android:layout_width="220dp"
         android:layout_height="50dp"
         android:layout_centerHorizontal="true"
         android:layout_marginStart="25dp"
+        android:layout_marginTop="55dp"
         android:foregroundGravity="center"
-        android:gravity="center"
 
-        android:text="- George Cristian Munteanu (EGOV)"
+        android:gravity="center"
+        android:text="- George Munteanu (EGOV)"
+        android:textAlignment="textStart"
         android:textColor="@color/black"
         android:textSize="17sp"
         app:layout_constraintBottom_toBottomOf="@+id/cerc_listareplati"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/text_nume2" />
 
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/maria"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginEnd="40dp"
+        android:src="@drawable/me3"
+        app:civ_border_color="#FF000000"
+        app:civ_border_width="2dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_descriere" />
 
     <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/profile_image"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="80dp"
-        android:layout_marginEnd="8dp"
+        android:id="@+id/horia"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="40dp"
         android:src="@drawable/horia"
         app:civ_border_color="#FF000000"
         app:civ_border_width="2dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.338"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/text_nume3" />
+        app:layout_constraintTop_toBottomOf="@+id/maria" />
 
     <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/android"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:layout_marginStart="180dp"
-        android:layout_marginEnd="8dp"
+        android:id="@+id/george"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="40dp"
         android:src="@drawable/george"
         app:civ_border_color="#FF000000"
         app:civ_border_width="2dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/profile_image" />
+        app:layout_constraintTop_toBottomOf="@+id/horia" />
 
-    <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/about_us_acs"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:src="@drawable/me3"
-        app:civ_border_color="#FF000000"
-        app:civ_border_width="2dp"
-        app:layout_constraintEnd_toStartOf="@+id/android"
-        app:layout_constraintTop_toBottomOf="@+id/android" />
-
-
-        <Button
+    <Button
         android:id="@+id/exit_despre"
         android:layout_width="200dp"
         android:layout_height="60dp"
         android:layout_centerHorizontal="true"
         android:layout_marginStart="40dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="35dp"
         android:layout_marginEnd="40dp"
         android:backgroundTint="@color/blue"
         android:gravity="center"
@@ -154,10 +149,5 @@
         android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/about_us_acs" />
-
-
-
+        app:layout_constraintTop_toBottomOf="@+id/text_nume3" />
 </androidx.constraintlayout.widget.ConstraintLayout>
-
-</ScrollView>
