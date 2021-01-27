@@ -1,6 +1,79 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="70dp"
+    android:background="@color/white"
+    android:padding="10dp">
 
-</LinearLayout>
+
+    <TextView
+        android:id="@+id/firstday_facturineplatite"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="10dp"
+        android:layout_toEndOf="@+id/identificator"
+        android:foregroundGravity="center_vertical"
+        android:gravity="center"
+        android:text="150"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@+id/identificator"
+        tools:layout_editor_absoluteY="60dp" />
+
+
+    <TextView
+        android:id="@+id/lastday_facturineplatite"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="10dp"
+        android:layout_toEndOf="@+id/firstday_facturineplatite"
+        android:foregroundGravity="center_vertical"
+        android:gravity="center"
+        android:text="Ianuarie"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@+id/firstday_facturineplatite"
+        tools:layout_editor_absoluteY="60dp" />
+
+    <TextView
+        android:id="@+id/value_facturineplatite"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="10dp"
+        android:layout_toEndOf="@+id/lastday_facturineplatite"
+        android:foregroundGravity="center_vertical"
+        android:gravity="center"
+        android:text="2020"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@+id/lastday_facturineplatite"
+        tools:layout_editor_absoluteY="60dp" />
+
+
+    <ImageView
+        android:id="@+id/payimage"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="10dp"
+        android:layout_toEndOf="@+id/value_facturineplatite"
+        android:foregroundGravity="center_vertical"
+        android:src="@drawable/pay"
+        android:gravity="center"
+        android:text="PAID"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@+id/value_facturineplatite"
+        tools:layout_editor_absoluteY="60dp" />
+
+</RelativeLayout>

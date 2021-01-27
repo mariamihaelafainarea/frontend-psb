@@ -37,12 +37,7 @@ public class FacturiNeplatiteAdaptor extends RecyclerView.Adapter<FacturiNeplati
         holder.first.setText(factura.getFirstDay());
         holder.last.setText(factura.getLastDay());
         holder.value.setText(factura.getValue());
-        if(factura.getPaid().equals("false")) {
-            holder.paid.setText("neplatit");
-        }else {
-            holder.paid.setText("platit");
 
-        }
 //
 //        holder.eraseButton.setOnClickListener(new View.OnClickListener() {
 //            @Override

@@ -38,11 +38,11 @@ public class GetAllFacturiNeplatiteAsyncTask extends AsyncTask<String,Void, JSON
             HttpClient httpClient = new DefaultHttpClient();
             HttpPost httpPost = new HttpPost("http://10.0.2.2:5001/api/new/bill");
 
-
             JSONObject jsonObj = new JSONObject();
             jsonObj.put("streetAddress", streetAddress);
             jsonObj.put("city", city);
             jsonObj.put("postalCode", postalCode);
+            jsonObj.put("paid","false");
             StringEntity entity = new StringEntity(jsonObj.toString());
             httpPost.setEntity(entity);
             httpPost.setHeader("Authorization","Bearer "+ ((MainActivity)mainActivity).getJwtTokenCode());

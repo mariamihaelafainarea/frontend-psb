@@ -1,7 +1,6 @@
-package ro.pub.cs.systems.eim.myapplicationf.facturineplatite_recyclerview;
+package ro.pub.cs.systems.eim.myapplicationf.facturiplatite_recyclerview.facturineplatite_recyclerview;
 
 import android.view.View;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -9,13 +8,14 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import ro.pub.cs.systems.eim.myapplicationf.R;
 
-public class FacturiNeplatiteViewHolder extends RecyclerView.ViewHolder {
+public class FacturiPlatiteViewHolder extends RecyclerView.ViewHolder {
 
     public TextView first;
     public TextView last;
     public TextView value;
+    public TextView paid ;
 
-    public FacturiNeplatiteViewHolder(@NonNull View itemView) {
+    public FacturiPlatiteViewHolder(@NonNull View itemView) {
         super(itemView);
         first =(TextView) itemView.findViewById(R.id.firstday_facturineplatite);
         last = (TextView) itemView.findViewById(R.id.lastday_facturineplatite);
