@@ -7,7 +7,6 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 
@@ -30,9 +29,9 @@ public class LoginActivity extends Activity {
 
 
         loginButton = (Button) findViewById(R.id.button_login);
-        inregistrareButton = (Button) findViewById(R.id.donthaveaccount);
-        usernameEditText = (EditText) findViewById(R.id.username_edit);
-        passwordEditText = (EditText) findViewById(R.id.password_edit);
+        inregistrareButton = (Button) findViewById(R.id.button_nuaicont);
+        usernameEditText = (EditText) findViewById(R.id.edit_email_login);
+        passwordEditText = (EditText) findViewById(R.id.edit_password_login);
 
 
         loginButton.setOnClickListener(new View.OnClickListener() {
