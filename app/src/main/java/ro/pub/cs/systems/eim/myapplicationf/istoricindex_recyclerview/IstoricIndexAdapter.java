@@ -35,9 +35,9 @@ public class IstoricIndexAdapter extends RecyclerView.Adapter<IstoricIndexViewHo
     public void onBindViewHolder(@NonNull IstoricIndexViewHolder holder, int position) {
         final int copyI = position;
         final IstoricIndex loc = dataSet.get(position);
-        holder.valoare.setText(loc.getValue());
-        holder.an.setText(loc.getYear());
-        holder.luna.setText(loc.getMonth());
+        holder.valoare.setText(String.valueOf(loc.getValue()));
+        holder.an.setText(String.valueOf(loc.getYear()));
+        holder.luna.setText(String.valueOf(loc.getMonth()));
     }
 
     @NonNull

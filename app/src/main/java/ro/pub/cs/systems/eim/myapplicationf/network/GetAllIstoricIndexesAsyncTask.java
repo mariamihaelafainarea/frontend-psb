@@ -8,6 +8,8 @@ import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.util.EntityUtils;
 import org.json.JSONArray;
@@ -36,19 +38,20 @@ public class GetAllIstoricIndexesAsyncTask extends AsyncTask<String,Void, JSONAr
 
         try {
             HttpClient httpClient = new DefaultHttpClient();
-            HttpGet httpGet = new HttpGet("http://10.0.2.2:5001/api/new/istoric");
+            HttpPost httpPost = new HttpPost("http://10.0.2.2:5001/api/new/istoric");
 
 
 
             JSONObject jsonObj = new JSONObject();
-            jsonObj.put("streetAdress", streetAddress);
+            jsonObj.put("streetAddress", streetAddress);
             jsonObj.put("city", city);
             jsonObj.put("postalCode", postalCode);
-
-            httpGet.setHeader("Authorization","Bearer "+ ((MainActivity)activity));
-            httpGet.setHeader("Accept", "application/json");
-            httpGet.setHeader("Content-type", "application/json");
-            HttpResponse httpResponse = httpClient.execute(httpGet);
+            StringEntity entity = new StringEntity(jsonObj.toString());
+            httpPost.setEntity(entity);
+            httpPost.setHeader("Authorization","Bearer "+ ((MainActivity)activity).getJwtTokenCode());
+            httpPost.setHeader("Accept", "application/json");
+            httpPost.setHeader("Content-type", "application/json");
+            HttpResponse httpResponse = httpClient.execute(httpPost);
             HttpEntity httpGetEntity = httpResponse.getEntity();
             if (httpGetEntity != null) {
                 String result = EntityUtils.toString(httpGetEntity);

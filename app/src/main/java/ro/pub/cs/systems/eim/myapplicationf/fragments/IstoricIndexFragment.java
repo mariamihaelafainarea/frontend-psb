@@ -50,7 +50,7 @@ public class IstoricIndexFragment  extends Fragment {
         dataset = new ArrayList<>();
 
         istoricIndexAdapter = new IstoricIndexAdapter(dataset, IstoricIndexFragment.this,(MainActivity)getActivity());
-        RecyclerView recyclerView = (RecyclerView) getView().findViewById(R.id.administrare_locuri_consum_recyclerview);
+        RecyclerView recyclerView = (RecyclerView) getView().findViewById(R.id.istoricindex_recyclerview);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getContext());
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
