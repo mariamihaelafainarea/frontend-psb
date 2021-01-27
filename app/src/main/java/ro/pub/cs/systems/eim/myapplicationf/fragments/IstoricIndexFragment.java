@@ -25,6 +25,7 @@ import ro.pub.cs.systems.eim.myapplicationf.R;
 import ro.pub.cs.systems.eim.myapplicationf.istoricindex_recyclerview.IstoricIndexAdapter;
 import ro.pub.cs.systems.eim.myapplicationf.locconsum_recyclerview.LocConsumAdapter;
 import ro.pub.cs.systems.eim.myapplicationf.models.IstoricIndex;
+import ro.pub.cs.systems.eim.myapplicationf.models.LocConsum;
 import ro.pub.cs.systems.eim.myapplicationf.network.GetAllIstoricIndexesAsyncTask;
 import ro.pub.cs.systems.eim.myapplicationf.network.GetAllLocuriDeConsumTaskAsync;
 
@@ -35,6 +36,7 @@ public class IstoricIndexFragment  extends Fragment {
     Button inapoiButton;
     IstoricIndexAdapter istoricIndexAdapter;
     public List<IstoricIndex> dataset;
+    public List<LocConsum> locuriConsum;
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
@@ -44,9 +46,9 @@ public class IstoricIndexFragment  extends Fragment {
         veziIstoricButton = view.findViewById(R.id.button_istoricindex);
         inapoiButton = view.findViewById(R.id.exit_istoricindex);
 
-
-
+        locuriConsum = new ArrayList<>();
         dataset = new ArrayList<>();
+
         istoricIndexAdapter = new IstoricIndexAdapter(dataset, IstoricIndexFragment.this,(MainActivity)getActivity());
         RecyclerView recyclerView = (RecyclerView) getView().findViewById(R.id.administrare_locuri_consum_recyclerview);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getContext());
@@ -59,11 +61,16 @@ public class IstoricIndexFragment  extends Fragment {
         new GetAllLocuriDeConsumTaskAsync((MainActivity)getActivity(),IstoricIndexFragment.this).execute(((MainActivity) getActivity()).getJwtTokenCode());
 
 
+
         veziIstoricButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                int pos = locatii_istoricIndex.getSelectedItemPosition();
+                String address = locuriConsum.get(pos).getAddress();
+                String city = locuriConsum.get(pos).getCity();
+                String postalCode = locuriConsum.get(pos).getPostalcode();
 
-                new GetAllIstoricIndexesAsyncTask((MainActivity)getActivity(),IstoricIndexFragment.this).execute();
+                new GetAllIstoricIndexesAsyncTask((MainActivity)getActivity(),IstoricIndexFragment.this).execute(address,city,postalCode);
             }
         });
 
@@ -120,5 +127,14 @@ public class IstoricIndexFragment  extends Fragment {
 
     public void setIstoricIndexAdapter(IstoricIndexAdapter istoricIndexAdapter) {
         this.istoricIndexAdapter = istoricIndexAdapter;
+    }
+
+
+    public List<LocConsum> getLocuriConsum() {
+        return locuriConsum;
+    }
+
+    public void setLocuriConsum(List<LocConsum> locuriConsum) {
+        this.locuriConsum = locuriConsum;
     }
 }

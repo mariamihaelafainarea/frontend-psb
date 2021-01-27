@@ -104,16 +104,39 @@ public class GetAllLocuriDeConsumTaskAsync extends AsyncTask<String,Void, JSONAr
 
                         }
                     }else if(istoricIndexFragment !=null) {
-                        for (int i = 0; i < jsonArray.length(); i++) {
+                        Spinner s  = istoricIndexFragment.getLocatii_istoricIndex();
+
+
+                        ArrayList<String> years = new ArrayList<String>();
+                        for (int i =0; i < jsonArray.length(); i++) {
                             JSONObject j = jsonArray.getJSONObject(i);
-                            IstoricIndex q = new IstoricIndex();
-                            q.setValue(j.getInt("value"));
-                            q.setMonth(j.getInt("month"));
-                            q.setYear(j.getInt("year"));
-                            istoricIndexFragment.getDataset().add(q);
-                            istoricIndexFragment.getIstoricIndexAdapter().notifyDataSetChanged();
+                            String nou = j.getString("streetAddress") + " "+ j.getString("city")+ " "+j.getString("postalCode");
+                            years.add(nou);
 
                         }
+                        ArrayAdapter<String> adapter = new ArrayAdapter<>((MainActivity)activity, android.R.layout.simple_spinner_item, years);
+                        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+                        s.setAdapter(adapter);
+
+                        adapter.notifyDataSetChanged();
+
+                        s.setSelection(0);
+                        s.setBackgroundColor(Color.parseColor("#a9a9a9"));
+                        ArrayList<LocConsum> array = new ArrayList<>();
+
+                        for (int i =0; i < jsonArray.length(); i++) {
+                            JSONObject j = jsonArray.getJSONObject(i);
+                            LocConsum locConsum = new LocConsum();
+                            locConsum.setAddress(j.getString("streetAddress"));
+                            locConsum.setCity(j.getString("city"));
+                            locConsum.setPostalcode(j.getString("postalCode"));
+                            array.add(locConsum);
+
+                        }
+
+                        istoricIndexFragment.setLocuriConsum(array);
+
                     }else if(transmitereIndexFragment != null) {
 
                         Spinner s  = transmitereIndexFragment.getAddressSpinner();
