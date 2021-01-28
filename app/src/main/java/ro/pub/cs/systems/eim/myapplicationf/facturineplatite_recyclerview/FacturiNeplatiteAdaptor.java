@@ -39,18 +39,21 @@ public class FacturiNeplatiteAdaptor extends RecyclerView.Adapter<FacturiNeplati
         holder.last.setText(String.valueOf(factura.getLastDay()));
         holder.value.setText(String.valueOf(factura.getValue()));
 
-        ((MainActivity) mainActivity).getWindow().setFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE,
-                WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
-        new PayTheBillTaskAsync(mainActivity).execute(dataSet.get(copyI).getFirstDay(),
-                                                        dataSet.get(copyI).getLastDay(),
-                                                        String.valueOf(dataSet.get(copyI).getValue()),
-                                                        facturiNeplatite.getLocuriConsum().get(copyI).getAddress(),
-                                                        facturiNeplatite.getLocuriConsum().get(copyI).getPostalcode(),
-                                                        facturiNeplatite.getLocuriConsum().get(copyI).getCity()
-                                                    );
-        dataSet.remove(copyI);
-        notifyItemRemoved(copyI);
-        notifyItemRangeChanged(copyI, dataSet.size());
+        holder.image.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                new PayTheBillTaskAsync(mainActivity, facturiNeplatite).execute(dataSet.get(copyI).getFirstDay(),
+                        dataSet.get(copyI).getLastDay(),
+                        String.valueOf(dataSet.get(copyI).getValue()),
+                        facturiNeplatite.getLocuriConsum().get(copyI).getAddress(),
+                        facturiNeplatite.getLocuriConsum().get(copyI).getPostalcode(),
+                        facturiNeplatite.getLocuriConsum().get(copyI).getCity(),
+                        String.valueOf(copyI)
+                );
+
+
+            }
+        });
 
 
     }

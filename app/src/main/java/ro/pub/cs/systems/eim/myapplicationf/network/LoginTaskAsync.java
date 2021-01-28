@@ -78,7 +78,6 @@ public class LoginTaskAsync extends AsyncTask<String, Void, JSONObject> {
     @Override
     protected void onPostExecute(JSONObject jsonObject) {
         super.onPostExecute(jsonObject);
-        ((LoginActivity)activity).getWindow().clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
         if(jsonObject != null) {
             try {
                 Intent i = new Intent(activity, MainActivity.class);

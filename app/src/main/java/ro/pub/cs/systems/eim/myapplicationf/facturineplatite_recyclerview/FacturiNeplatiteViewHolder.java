@@ -15,11 +15,13 @@ public class FacturiNeplatiteViewHolder extends RecyclerView.ViewHolder {
     public TextView last;
     public TextView value;
 
+    public ImageView image;
+
     public FacturiNeplatiteViewHolder(@NonNull View itemView) {
         super(itemView);
         first =(TextView) itemView.findViewById(R.id.firstday_facturineplatite);
         last = (TextView) itemView.findViewById(R.id.lastday_facturineplatite);
         value = (TextView) itemView.findViewById(R.id.value_facturineplatite);
-
+        image = (ImageView) itemView.findViewById(R.id.payimage);
     }
 }

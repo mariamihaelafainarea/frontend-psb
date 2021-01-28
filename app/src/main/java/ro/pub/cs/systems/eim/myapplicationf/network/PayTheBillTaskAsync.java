@@ -12,36 +12,43 @@ import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.json.JSONObject;
 
+import java.nio.file.attribute.FileAttribute;
+
 import ro.pub.cs.systems.eim.myapplicationf.MainActivity;
+import ro.pub.cs.systems.eim.myapplicationf.fragments.AdministrareFacturiNeplatiteFragment;
+import ro.pub.cs.systems.eim.myapplicationf.models.FacturiNeplatite;
 
 public class PayTheBillTaskAsync extends AsyncTask<String,Void,Integer> {
 
     MainActivity mainActivity;
+    AdministrareFacturiNeplatiteFragment facturiNeplatite;
 
-    public PayTheBillTaskAsync(MainActivity mainActivity) {
+    public PayTheBillTaskAsync(MainActivity mainActivity, AdministrareFacturiNeplatiteFragment facturiNeplatite) {
         this.mainActivity = mainActivity;
+        this.facturiNeplatite = facturiNeplatite;
     }
-
+    public String copyI;
     @Override
     protected Integer doInBackground(String... strings) {
         String firstDay = strings[0].toString();
         String lastDay = strings[1].toString();
         String value = strings[2].toString();
         String streetAddress = strings[3].toString();
-        String city = strings[2].toString();
-        String postalCode = strings[3].toString();
+        String city = strings[4].toString();
+        String postalCode = strings[5].toString();
+        copyI = strings[6].toString();
 
         try {
             HttpClient httpClient = new DefaultHttpClient();
-            HttpPut httpPut = new HttpPut("http://10.0.2.2:5001/api/new/paybills");
+            HttpPut httpPut = new HttpPut("http://10.0.2.2:5001/api/new/bill/paybills");
 
             JSONObject jsonObj = new JSONObject();
             jsonObj.put("firstDay", firstDay);
             jsonObj.put("lastDay", lastDay);
             jsonObj.put("value", value);
-            jsonObj.put("streetAddress", firstDay);
-            jsonObj.put("city", lastDay);
-            jsonObj.put("postalCode", value);
+            jsonObj.put("streetAddress", streetAddress);
+            jsonObj.put("city", city);
+            jsonObj.put("postalCode", postalCode);
 
             StringEntity entity = new StringEntity(jsonObj.toString());
             httpPut.setEntity(entity);
@@ -75,6 +82,13 @@ public class PayTheBillTaskAsync extends AsyncTask<String,Void,Integer> {
                         .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int id) {
                                 dialog.cancel();
+
+                             //   facturiNeplatite.getDataset().remove(Integer.valueOf(copyI));
+                                facturiNeplatite.getDataset().clear();
+                                facturiNeplatite.getFacturiNeplatiteAdaptor().notifyAll();
+                                facturiNeplatite.getFacturiNeplatiteAdaptor().notifyItemRangeChanged(0,0);
+                             //   facturiNeplatite.getFacturiNeplatiteAdaptor().notifyItemRemoved(Integer.valueOf(copyI));
+                              //  facturiNeplatite.getFacturiNeplatiteAdaptor().notifyItemRangeChanged(Integer.valueOf(copyI),facturiNeplatite.getDataset().size());
                             }
                         });
 

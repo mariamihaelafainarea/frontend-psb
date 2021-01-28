@@ -50,8 +50,7 @@ public class LoginActivity extends Activity {
                     bundle.putString("Eroare","Te rog introdu parola");
                     showDialog(1,bundle);
                 }else {
-                    getWindow().setFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE,
-                            WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
+
                     new LoginTaskAsync(LoginActivity.this).execute(username, password);
                 }
             }

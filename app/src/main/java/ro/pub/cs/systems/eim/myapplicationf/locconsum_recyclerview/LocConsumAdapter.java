@@ -45,8 +45,7 @@ public class LocConsumAdapter extends RecyclerView.Adapter<LocuriDeConsumViewHol
             @Override
             public void onClick(View view) {
                 //ASTA TB INLOCUITA CU REMOVE PE SERVER
-                ((MainActivity) mainActivity).getWindow().setFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE,
-                        WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
+
                 new EraseLocDeConsumTaskAsync(mainActivity).execute(loc.getAddress(),loc.getCity(),loc.getPostalcode());
                 dataSet.remove(copyI);
                 notifyItemRemoved(copyI);
